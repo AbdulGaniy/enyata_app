@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:neco/src/core/overlay/overlay_wrapper.dart';
-import 'package:neco/src/core/routing/app_routes.dart';
-import 'package:neco/src/dismissible_keyboard_wrapper.dart';
+import 'package:srex/src/core/overlay/overlay_wrapper.dart';
+import 'package:srex/src/core/routing/app_routes.dart';
+import 'package:srex/src/dismissible_keyboard_wrapper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neco/src/features/onboarding/api/auth_api.dart';
-import 'package:neco/src/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:srex/src/features/onboarding/api/auth_api.dart';
+import 'package:srex/src/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:ui_package/configs/_config.dart';
 import 'package:ui_package/configs/theme.dart';
 
@@ -72,7 +72,7 @@ class _AppWrapperState extends State<AppWrapper> {
   _routeToWelcomeScreen(BuildContext context) {
     "User is unauthenticated.".log();
     AuthApi.instance.logout();
-    router.go(const WelcomeRoute().location);
+    router.go(const LoginRoute().location);
   }
 
   void _goToHomeScreen(BuildContext context) {

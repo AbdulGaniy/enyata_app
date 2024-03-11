@@ -2,11 +2,11 @@
 
 import 'package:fpdart/src/task_either.dart';
 import 'package:fpdart/src/unit.dart';
-import 'package:neco/src/core/errors/failures.dart';
-import 'package:neco/src/core/network/_network.dart';
-import 'package:neco/src/features/home/domain/domain/service/home_service.dart';
-import 'package:neco/src/features/onboarding/domain/entities/app_user.dart';
-import 'package:neco/src/features/onboarding/domain/service/onboarding_service.dart';
+import 'package:srex/src/core/errors/failures.dart';
+import 'package:srex/src/core/network/_network.dart';
+import 'package:srex/src/features/home/domain/domain/service/home_service.dart';
+import 'package:srex/src/features/onboarding/domain/entities/app_user.dart';
+import 'package:srex/src/features/onboarding/domain/service/onboarding_service.dart';
 import 'package:ui_package/configs/_config.dart';
 
 import '../../../../core/errors/exceptions.dart';

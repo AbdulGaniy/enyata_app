@@ -1,6 +1,6 @@
 import 'package:fpdart/fpdart.dart';
-import 'package:neco/src/core/value_objects/value_failure.dart';
-import 'package:neco/src/core/value_objects/value_object.dart';
+import 'package:srex/src/core/value_objects/value_failure.dart';
+import 'package:srex/src/core/value_objects/value_object.dart';
 
 
 class Email extends ValueObject<String> {

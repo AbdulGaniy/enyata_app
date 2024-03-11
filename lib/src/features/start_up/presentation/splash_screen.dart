@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:neco/src/core/routing/app_routes.dart';
+import 'package:srex/src/core/routing/app_routes.dart';
 import 'package:ui_package/categories/atoms/_atoms.dart';
 import 'package:ui_package/configs/_config.dart';
 

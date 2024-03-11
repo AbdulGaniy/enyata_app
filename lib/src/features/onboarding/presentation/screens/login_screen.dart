@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:neco/src/core/configs/context_extensions.dart';
-import 'package:neco/src/core/errors/exceptions.dart';
-import 'package:neco/src/features/onboarding/domain/entities/app_user.dart';
+import 'package:srex/src/core/configs/context_extensions.dart';
+import 'package:srex/src/core/errors/exceptions.dart';
+import 'package:srex/src/features/onboarding/domain/entities/app_user.dart';
 import 'package:string_extensions/string_extensions.dart';
 import 'package:ui_package/categories/atoms/_atoms.dart';
 import 'package:ui_package/categories/atoms/app_image.dart';
@@ -39,7 +39,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: context.colorScheme.surface,
+    );
   }
 
   }

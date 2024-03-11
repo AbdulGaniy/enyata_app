@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:neco/src/features/home/presentation/screen/home_screen.dart';
+import 'package:srex/src/features/home/presentation/screen/home_screen.dart';
 import 'package:ui_package/categories/layouts/_layouts.dart';
 import 'package:ui_package/configs/_config.dart';
 

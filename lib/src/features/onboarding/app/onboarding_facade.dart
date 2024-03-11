@@ -1,8 +1,8 @@
 
 
 import 'package:fpdart/fpdart.dart';
-import 'package:neco/src/core/errors/failures.dart';
-import 'package:neco/src/features/onboarding/domain/entities/user.dart';
+import 'package:srex/src/core/errors/failures.dart';
+import 'package:srex/src/features/onboarding/domain/entities/user.dart';
 import 'package:ui_package/ui_package.dart';
 
 import '../../../core/value_objects/email.dart';

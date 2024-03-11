@@ -1,7 +1,7 @@
 
 import 'package:local_auth/local_auth.dart';
-import 'package:neco/src/core/errors/exceptions.dart';
-import 'package:neco/src/features/onboarding/infrastructure/models/app_user_model.dart';
+import 'package:srex/src/core/errors/exceptions.dart';
+import 'package:srex/src/features/onboarding/infrastructure/models/app_user_model.dart';
 
 import '../../../../core/configs/app_config.dart';
 import '../../../../core/network/_network.dart';
