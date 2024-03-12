@@ -42,10 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppSvgIcon(context.icons.srex)
-            ]
-            ),
+          children: [AppSvgIcon(context.icons.srex)]),
     ));
   }
 }
