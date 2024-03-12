@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
-import 'package:neco/src/core/configs/context_extensions.dart';
+import 'package:srex/src/core/configs/context_extensions.dart';
 import 'package:ui_package/categories/atoms/_atoms.dart';
 import 'package:ui_package/categories/buttons/_buttons.dart';
 import 'package:ui_package/categories/layouts/_layouts.dart';

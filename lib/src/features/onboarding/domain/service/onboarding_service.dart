@@ -1,7 +1,7 @@
 import 'package:fpdart/fpdart.dart';
-import 'package:neco/src/features/onboarding/domain/entities/app_user.dart';
-import 'package:neco/src/features/onboarding/domain/entities/user.dart';
-import 'package:neco/src/features/onboarding/domain/value_objects/password.dart';
+import 'package:srex/src/features/onboarding/domain/entities/app_user.dart';
+import 'package:srex/src/features/onboarding/domain/entities/user.dart';
+import 'package:srex/src/features/onboarding/domain/value_objects/password.dart';
 
 import '../../../../core/errors/failures.dart';
 import '../../../../core/value_objects/email.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:neco/src/features/onboarding/domain/entities/user.dart';
+import 'package:srex/src/features/onboarding/domain/entities/user.dart';
 import 'package:ui_package/configs/_config.dart';
 
 import '../models/app_user_model.dart';

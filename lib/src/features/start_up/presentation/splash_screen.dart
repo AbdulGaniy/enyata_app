@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:neco/src/core/routing/app_routes.dart';
+import 'package:srex/src/core/routing/app_routes.dart';
 import 'package:ui_package/categories/atoms/_atoms.dart';
 import 'package:ui_package/configs/_config.dart';
 
@@ -26,8 +26,31 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colorScheme.surface,
-      body: Container()
+      backgroundColor: context.customColorScheme.splashScreenBackground,
+      body: SafeArea(
+        top: false,
+        bottom: false,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Center(
+              child: AppSvgIcon(
+                context.icons.srexWhite,
+                height: 50,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child:  AppSvgIcon(
+                context.icons.cityRoad,
+                width: context.screenWidth,
+                height: 500,
+              ),
+            )
+
+          ],
+        ),
+      )
     );
   }
 

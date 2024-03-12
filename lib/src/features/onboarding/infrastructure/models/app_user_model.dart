@@ -1,7 +1,7 @@
 
 
 
-import 'package:neco/src/features/onboarding/domain/entities/app_user.dart';
+import 'package:srex/src/features/onboarding/domain/entities/app_user.dart';
 
 class AppUserModel extends AppUser{
   const AppUserModel({

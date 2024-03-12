@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:neco/src/features/onboarding/app/onboarding_facade.dart';
+import 'package:srex/src/features/onboarding/app/onboarding_facade.dart';
 import 'package:ui_package/ui_package.dart';
 
 import '../../domain/entities/app_user.dart';

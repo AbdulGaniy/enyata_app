@@ -2,9 +2,9 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:neco/src/core/configs/app_config.dart';
-import 'package:neco/src/features/onboarding/api/auth_api.dart';
-import 'package:neco/src/features/onboarding/app/onboarding_facade.dart';
+import 'package:srex/src/core/configs/app_config.dart';
+import 'package:srex/src/features/onboarding/api/auth_api.dart';
+import 'package:srex/src/features/onboarding/app/onboarding_facade.dart';
 
 import 'injection.dart';
 
@@ -12,7 +12,6 @@ class App{
   static Future<void> init([AppConfig? appConfig]) async {
     await _initHive();
     await initInjection(appConfig ?? _getConfig());
-    await _initGeoLocation();
 
     await _initAuthApi();
   }
@@ -31,13 +30,4 @@ class App{
     );
   }
 
-  static Future<LocationPermission> _initGeoLocation() async{
-    LocationPermission permission;
-    permission = await Geolocator.checkPermission();
-    if(permission == LocationPermission.denied){
-      permission = await Geolocator.requestPermission();
-      return permission;
-    }
-    return await Geolocator.requestPermission();
-  }
 }
