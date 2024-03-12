@@ -33,17 +33,36 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: context.colorScheme.surface,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppSvgIcon(
+                context.icons.srexLogo,
+              )
+              const Gap(10),
+              AppText(
+                  params: AppTextParams(
+                    text: "Welcome back",
+                    textStyle: AppTextStyles.bodyRegular,
+                    color: context.colorScheme.background,
+                    fontWeight:
+                  )
+              )
+            ],
+          ),
+        )
+      ),
     );
   }
-
-  }
+}
 
 
