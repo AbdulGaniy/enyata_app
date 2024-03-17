@@ -2,7 +2,6 @@
 import 'package:srex/src/core/errors/exceptions.dart';
 import 'package:srex/src/features/onboarding/infrastructure/models/app_user_model.dart';
 import 'package:rxdart/rxdart.dart';
-
 import '../../../../core/configs/app_config.dart';
 import '../../../../core/network/_network.dart';
 import '../models/message_model.dart';
