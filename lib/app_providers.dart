@@ -13,7 +13,7 @@ class AppProviders {
         create: (context) => sl<OnboardingBloc>(),
       ),
       BlocProvider<OverlayBloc>(create: (context) => sl<OverlayBloc>()),
-      BlocProvider<HomeBloc>(create: (context) => sl<HomeBloc>()),
+      // BlocProvider<HomeBloc>(create: (context) => sl<HomeBloc>()),
     ];
   }
 }

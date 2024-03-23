@@ -8,6 +8,13 @@ class OnboardingState with _$OnboardingState {
 
   const factory OnboardingState.signInFailed(String message) = _SignInFailed;
 
+  const factory OnboardingState.registerSuccess(AppUser user) = _RegisterSuccess;
+
+
+  const factory OnboardingState.registerFailed(String message) = _RegisterFailed;
+
+
+
   const factory OnboardingState.authenticated(AppUser user) = _Authenticated;
 
   const factory OnboardingState.unauthenticated() = _Unauthenticated;
@@ -15,23 +22,4 @@ class OnboardingState with _$OnboardingState {
   const factory OnboardingState.loginPage(AppUser user)
 = _LoginPage;
 
-  const factory OnboardingState.credentialsRetrieved({
-    required String email,
-  }) = _CredentialsRetrieved;
-
-  const factory OnboardingState.failedToRetrieveCredentials(String message) = _FailedToRetrieveCredentials;
-
-  const factory OnboardingState.cachingCredentials() = _CachingCredentials;
-
-  const factory OnboardingState.cachedCredentialsSuccessful({
-    required String email,
-  }) = _CachedCredentialsSuccessful;
-
-  const factory OnboardingState.cachedCredentialsFailed(String message) = _CachedCredentialsFailed;
-
-  const factory OnboardingState.authenticatingBiometric() = _AuthenticatingBiometric;
-
-  const factory OnboardingState.biometricAuthenticationFailed(String message) = _BiometricAuthenticationFailed;
-
-  const factory OnboardingState.biometricAuthenticationSuccessful(bool status) = _BiometricAuthenticationSuccessful;
 }

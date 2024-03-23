@@ -72,12 +72,12 @@ class OnboardingServiceAdapter extends OnboardingService
   }
 
   @override
-  TaskEither<Failure, AppUser> signInWithEmailAndPassword({required Email email, required Password password}) {
+  TaskEither<Failure, AppUser> signInWithEmailAndPassword({required String email, required String  password}) {
     return TaskEither.tryCatch(
         () async {
           return checkInternetThenMakeRequest(_networkInfo,
            request: () async {
-            final user = await _remoteDataSource.signInWithEmailAndPassword(email: email.getOrElse(""), password: password.getOrElse(""),);
+            final user = await _remoteDataSource.signInWithEmailAndPassword(email: email, password: password,);
             await _cacheUser(user);
             return user;
            }
@@ -152,78 +152,43 @@ class OnboardingServiceAdapter extends OnboardingService
   }
 
   @override
-  TaskEither<Failure, String> retrieveCachedCredentials() {
+  TaskEither<Failure, AppUser> registerUser({required String email, required String password, required String username, required String firstName, required String lastName}) {
     return TaskEither.tryCatch(
-          () async {
-        return await _localDataSource.retrieveCachedCredentials();
-      },
-          (error, stackTrace) {
-        error.log();
-        stackTrace.log();
+            () async {
+              return checkInternetThenMakeRequest(_networkInfo,
+               request: () async {
+                final user = await _remoteDataSource.registerUser(
+                  email: email,
+                  password: password,
+                  username: username,
+                  firstName: firstName,
+                  lastName: lastName,
+                );
+                await _localDataSource.cacheUser(user);
+                await _localDataSource.saveUserWithJwt(user);
 
-        if (error is NoInternetFailure) {
-          return error;
-        }
+                return user;
+               }
+              );
+            },
+            (error, stackTrace) {
+          error.log();
+          stackTrace.log();
 
-        if (error is CustomException) {
-          return ServerFailure(message: error.message);
-        }
+          if (error is NoInternetFailure) {
+            return error;
+          }
 
-        return ServerFailure(message: error.toString());
-      },
+          if (error is CustomException) {
+            return ServerFailure(message: error.message);
+          }
+
+          return ServerFailure(message: error.toString());
+        },
     );
   }
 
-  @override
-  TaskEither<Failure, bool> biometricAuthentication() {
-    return TaskEither.tryCatch(
-          () async {
-        return await _remoteDataSource.biometricAuthentication();
-      },
-          (error, stackTrace) {
-        error.log();
-        stackTrace.log();
 
-        if (error is NoInternetFailure) {
-          return error;
-        }
 
-        if (error is CustomException) {
-          return ServerFailure(message: error.message);
-        }
-
-        return ServerFailure(message: error.toString());
-      },
-    );
-  }
-
-  @override
-  TaskEither<Failure, AppUser> biometricLogin({required Email email}) {
-    return TaskEither.tryCatch(
-          () async {
-        return checkInternetThenMakeRequest(_networkInfo,
-            request: () async {
-              final user = await _remoteDataSource.loginWithBiometric(email: email.getOrElse(""));
-              await _cacheUser(user);
-              return user;
-            }
-        );
-      },
-          (error, stackTrace) {
-        error.log();
-        stackTrace.log();
-
-        if (error is NoInternetFailure) {
-          return error;
-        }
-
-        if (error is CustomException) {
-          return ServerFailure(message: error.message);
-        }
-
-        return ServerFailure(message: error.toString());
-      },
-    );
-  }
 
 }

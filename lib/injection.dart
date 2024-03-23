@@ -23,7 +23,7 @@ import 'package:srex/src/features/onboarding/presentation/bloc/onboarding_bloc.d
 import 'package:ui_package/configs/_config.dart';
 
 part 'src/features/onboarding/_onboarding_injection.dart';
-part 'src/features/home/_home_injection.dart';
+// part 'src/features/home/_home_injection.dart';
 
 final sl = GetIt.instance;
 
@@ -32,7 +32,7 @@ Future<void> initInjection(AppConfig config) async {
 
   await Future.wait([
     OnboardingInjection.register(),
-    HomeInjection.register(),
+    // HomeInjection.register(),
 
   ]);
   sl.registerFactory(() => OverlayBloc());

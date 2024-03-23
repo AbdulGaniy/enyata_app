@@ -20,67 +20,57 @@ mixin _$OnboardingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password)
         signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)?
         signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -179,11 +169,11 @@ class _$SignInImpl implements _SignIn {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password)
         signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
   }) {
     return signInWithEmailAndPassword(email, password);
   }
@@ -193,11 +183,11 @@ class _$SignInImpl implements _SignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)?
         signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
   }) {
     return signInWithEmailAndPassword?.call(email, password);
   }
@@ -206,11 +196,11 @@ class _$SignInImpl implements _SignIn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPassword != null) {
@@ -223,13 +213,9 @@ class _$SignInImpl implements _SignIn {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
   }) {
     return signInWithEmailAndPassword(this);
   }
@@ -238,12 +224,9 @@ class _$SignInImpl implements _SignIn {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
   }) {
     return signInWithEmailAndPassword?.call(this);
   }
@@ -252,12 +235,9 @@ class _$SignInImpl implements _SignIn {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPassword != null) {
@@ -276,6 +256,215 @@ abstract class _SignIn implements OnboardingEvent {
   String get password;
   @JsonKey(ignore: true)
   _$$SignInImplCopyWith<_$SignInImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RegisterImplCopyWith<$Res> {
+  factory _$$RegisterImplCopyWith(
+          _$RegisterImpl value, $Res Function(_$RegisterImpl) then) =
+      __$$RegisterImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {String email,
+      String password,
+      String userName,
+      String firstName,
+      String lastName});
+}
+
+/// @nodoc
+class __$$RegisterImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$RegisterImpl>
+    implements _$$RegisterImplCopyWith<$Res> {
+  __$$RegisterImplCopyWithImpl(
+      _$RegisterImpl _value, $Res Function(_$RegisterImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? userName = null,
+    Object? firstName = null,
+    Object? lastName = null,
+  }) {
+    return _then(_$RegisterImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterImpl implements _Register {
+  const _$RegisterImpl(
+      {required this.email,
+      required this.password,
+      required this.userName,
+      required this.firstName,
+      required this.lastName});
+
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final String userName;
+  @override
+  final String firstName;
+  @override
+  final String lastName;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.register(email: $email, password: $password, userName: $userName, firstName: $firstName, lastName: $lastName)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, userName, firstName, lastName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
+      __$$RegisterImplCopyWithImpl<_$RegisterImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password)
+        signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
+    required TResult Function() checkLoginState,
+    required TResult Function(String email) cacheCredentials,
+  }) {
+    return register(email, password, userName, firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)?
+        signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult? Function()? checkLoginState,
+    TResult? Function(String email)? cacheCredentials,
+  }) {
+    return register?.call(email, password, userName, firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult Function()? checkLoginState,
+    TResult Function(String email)? cacheCredentials,
+    required TResult orElse(),
+  }) {
+    if (register != null) {
+      return register(email, password, userName, firstName, lastName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
+    required TResult Function(_CheckLoginState value) checkLoginState,
+    required TResult Function(_CacheCredentials value) cacheCredentials,
+  }) {
+    return register(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_CheckLoginState value)? checkLoginState,
+    TResult? Function(_CacheCredentials value)? cacheCredentials,
+  }) {
+    return register?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
+    TResult Function(_CheckLoginState value)? checkLoginState,
+    TResult Function(_CacheCredentials value)? cacheCredentials,
+    required TResult orElse(),
+  }) {
+    if (register != null) {
+      return register(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Register implements OnboardingEvent {
+  const factory _Register(
+      {required final String email,
+      required final String password,
+      required final String userName,
+      required final String firstName,
+      required final String lastName}) = _$RegisterImpl;
+
+  String get email;
+  String get password;
+  String get userName;
+  String get firstName;
+  String get lastName;
+  @JsonKey(ignore: true)
+  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -319,11 +508,11 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password)
         signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
   }) {
     return checkLoginState();
   }
@@ -333,11 +522,11 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)?
         signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
   }) {
     return checkLoginState?.call();
   }
@@ -346,11 +535,11 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (checkLoginState != null) {
@@ -363,13 +552,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
   }) {
     return checkLoginState(this);
   }
@@ -378,12 +563,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
   }) {
     return checkLoginState?.call(this);
   }
@@ -392,12 +574,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (checkLoginState != null) {
@@ -478,11 +657,11 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password)
         signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
   }) {
     return cacheCredentials(email);
   }
@@ -492,11 +671,11 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)?
         signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
   }) {
     return cacheCredentials?.call(email);
   }
@@ -505,11 +684,11 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (cacheCredentials != null) {
@@ -522,13 +701,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
   }) {
     return cacheCredentials(this);
   }
@@ -537,12 +712,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
   }) {
     return cacheCredentials?.call(this);
   }
@@ -551,12 +723,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
     required TResult orElse(),
   }) {
     if (cacheCredentials != null) {
@@ -577,458 +746,17 @@ abstract class _CacheCredentials implements OnboardingEvent {
 }
 
 /// @nodoc
-abstract class _$$BiometricLoginImplCopyWith<$Res> {
-  factory _$$BiometricLoginImplCopyWith(_$BiometricLoginImpl value,
-          $Res Function(_$BiometricLoginImpl) then) =
-      __$$BiometricLoginImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$$BiometricLoginImplCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$BiometricLoginImpl>
-    implements _$$BiometricLoginImplCopyWith<$Res> {
-  __$$BiometricLoginImplCopyWithImpl(
-      _$BiometricLoginImpl _value, $Res Function(_$BiometricLoginImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$BiometricLoginImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BiometricLoginImpl implements _BiometricLogin {
-  const _$BiometricLoginImpl({required this.email});
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'OnboardingEvent.biometricLogin(email: $email)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BiometricLoginImpl &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BiometricLoginImplCopyWith<_$BiometricLoginImpl> get copyWith =>
-      __$$BiometricLoginImplCopyWithImpl<_$BiometricLoginImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password)
-        signInWithEmailAndPassword,
-    required TResult Function() checkLoginState,
-    required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
-  }) {
-    return biometricLogin(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)?
-        signInWithEmailAndPassword,
-    TResult? Function()? checkLoginState,
-    TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
-  }) {
-    return biometricLogin?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signInWithEmailAndPassword,
-    TResult Function()? checkLoginState,
-    TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (biometricLogin != null) {
-      return biometricLogin(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignIn value) signInWithEmailAndPassword,
-    required TResult Function(_CheckLoginState value) checkLoginState,
-    required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
-  }) {
-    return biometricLogin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult? Function(_CheckLoginState value)? checkLoginState,
-    TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
-  }) {
-    return biometricLogin?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult Function(_CheckLoginState value)? checkLoginState,
-    TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (biometricLogin != null) {
-      return biometricLogin(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BiometricLogin implements OnboardingEvent {
-  const factory _BiometricLogin({required final String email}) =
-      _$BiometricLoginImpl;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$BiometricLoginImplCopyWith<_$BiometricLoginImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RetrieveCachedCredentialsImplCopyWith<$Res> {
-  factory _$$RetrieveCachedCredentialsImplCopyWith(
-          _$RetrieveCachedCredentialsImpl value,
-          $Res Function(_$RetrieveCachedCredentialsImpl) then) =
-      __$$RetrieveCachedCredentialsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RetrieveCachedCredentialsImplCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$RetrieveCachedCredentialsImpl>
-    implements _$$RetrieveCachedCredentialsImplCopyWith<$Res> {
-  __$$RetrieveCachedCredentialsImplCopyWithImpl(
-      _$RetrieveCachedCredentialsImpl _value,
-      $Res Function(_$RetrieveCachedCredentialsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RetrieveCachedCredentialsImpl implements _RetrieveCachedCredentials {
-  const _$RetrieveCachedCredentialsImpl();
-
-  @override
-  String toString() {
-    return 'OnboardingEvent.retrieveCachedCredentials()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RetrieveCachedCredentialsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password)
-        signInWithEmailAndPassword,
-    required TResult Function() checkLoginState,
-    required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
-  }) {
-    return retrieveCachedCredentials();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)?
-        signInWithEmailAndPassword,
-    TResult? Function()? checkLoginState,
-    TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
-  }) {
-    return retrieveCachedCredentials?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signInWithEmailAndPassword,
-    TResult Function()? checkLoginState,
-    TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (retrieveCachedCredentials != null) {
-      return retrieveCachedCredentials();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignIn value) signInWithEmailAndPassword,
-    required TResult Function(_CheckLoginState value) checkLoginState,
-    required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
-  }) {
-    return retrieveCachedCredentials(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult? Function(_CheckLoginState value)? checkLoginState,
-    TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
-  }) {
-    return retrieveCachedCredentials?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult Function(_CheckLoginState value)? checkLoginState,
-    TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (retrieveCachedCredentials != null) {
-      return retrieveCachedCredentials(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RetrieveCachedCredentials implements OnboardingEvent {
-  const factory _RetrieveCachedCredentials() = _$RetrieveCachedCredentialsImpl;
-}
-
-/// @nodoc
-abstract class _$$BiometricAuthenticationImplCopyWith<$Res> {
-  factory _$$BiometricAuthenticationImplCopyWith(
-          _$BiometricAuthenticationImpl value,
-          $Res Function(_$BiometricAuthenticationImpl) then) =
-      __$$BiometricAuthenticationImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BiometricAuthenticationImplCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$BiometricAuthenticationImpl>
-    implements _$$BiometricAuthenticationImplCopyWith<$Res> {
-  __$$BiometricAuthenticationImplCopyWithImpl(
-      _$BiometricAuthenticationImpl _value,
-      $Res Function(_$BiometricAuthenticationImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BiometricAuthenticationImpl implements _BiometricAuthentication {
-  const _$BiometricAuthenticationImpl();
-
-  @override
-  String toString() {
-    return 'OnboardingEvent.biometricAuthentication()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BiometricAuthenticationImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password)
-        signInWithEmailAndPassword,
-    required TResult Function() checkLoginState,
-    required TResult Function(String email) cacheCredentials,
-    required TResult Function(String email) biometricLogin,
-    required TResult Function() retrieveCachedCredentials,
-    required TResult Function() biometricAuthentication,
-  }) {
-    return biometricAuthentication();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)?
-        signInWithEmailAndPassword,
-    TResult? Function()? checkLoginState,
-    TResult? Function(String email)? cacheCredentials,
-    TResult? Function(String email)? biometricLogin,
-    TResult? Function()? retrieveCachedCredentials,
-    TResult? Function()? biometricAuthentication,
-  }) {
-    return biometricAuthentication?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? signInWithEmailAndPassword,
-    TResult Function()? checkLoginState,
-    TResult Function(String email)? cacheCredentials,
-    TResult Function(String email)? biometricLogin,
-    TResult Function()? retrieveCachedCredentials,
-    TResult Function()? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthentication != null) {
-      return biometricAuthentication();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignIn value) signInWithEmailAndPassword,
-    required TResult Function(_CheckLoginState value) checkLoginState,
-    required TResult Function(_CacheCredentials value) cacheCredentials,
-    required TResult Function(_BiometricLogin value) biometricLogin,
-    required TResult Function(_RetrieveCachedCredentials value)
-        retrieveCachedCredentials,
-    required TResult Function(_BiometricAuthentication value)
-        biometricAuthentication,
-  }) {
-    return biometricAuthentication(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult? Function(_CheckLoginState value)? checkLoginState,
-    TResult? Function(_CacheCredentials value)? cacheCredentials,
-    TResult? Function(_BiometricLogin value)? biometricLogin,
-    TResult? Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult? Function(_BiometricAuthentication value)? biometricAuthentication,
-  }) {
-    return biometricAuthentication?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignIn value)? signInWithEmailAndPassword,
-    TResult Function(_CheckLoginState value)? checkLoginState,
-    TResult Function(_CacheCredentials value)? cacheCredentials,
-    TResult Function(_BiometricLogin value)? biometricLogin,
-    TResult Function(_RetrieveCachedCredentials value)?
-        retrieveCachedCredentials,
-    TResult Function(_BiometricAuthentication value)? biometricAuthentication,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthentication != null) {
-      return biometricAuthentication(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BiometricAuthentication implements OnboardingEvent {
-  const factory _BiometricAuthentication() = _$BiometricAuthenticationImpl;
-}
-
-/// @nodoc
 mixin _$OnboardingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1036,17 +764,11 @@ mixin _$OnboardingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1054,17 +776,11 @@ mixin _$OnboardingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1073,23 +789,11 @@ mixin _$OnboardingState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1097,21 +801,11 @@ mixin _$OnboardingState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1119,21 +813,11 @@ mixin _$OnboardingState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1198,17 +882,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return initial();
   }
@@ -1219,17 +897,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return initial?.call();
   }
@@ -1240,17 +912,11 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1265,23 +931,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return initial(this);
   }
@@ -1292,21 +946,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return initial?.call(this);
   }
@@ -1317,21 +961,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1386,17 +1020,11 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return loading();
   }
@@ -1407,17 +1035,11 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return loading?.call();
   }
@@ -1428,17 +1050,11 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1453,23 +1069,11 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return loading(this);
   }
@@ -1480,21 +1084,11 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return loading?.call(this);
   }
@@ -1505,21 +1099,11 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1600,17 +1184,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return signInFailed(message);
   }
@@ -1621,17 +1199,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return signInFailed?.call(message);
   }
@@ -1642,17 +1214,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (signInFailed != null) {
@@ -1667,23 +1233,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return signInFailed(this);
   }
@@ -1694,21 +1248,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return signInFailed?.call(this);
   }
@@ -1719,21 +1263,11 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (signInFailed != null) {
@@ -1749,6 +1283,346 @@ abstract class _SignInFailed implements OnboardingState {
   String get message;
   @JsonKey(ignore: true)
   _$$SignInFailedImplCopyWith<_$SignInFailedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RegisterSuccessImplCopyWith<$Res> {
+  factory _$$RegisterSuccessImplCopyWith(_$RegisterSuccessImpl value,
+          $Res Function(_$RegisterSuccessImpl) then) =
+      __$$RegisterSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class __$$RegisterSuccessImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$RegisterSuccessImpl>
+    implements _$$RegisterSuccessImplCopyWith<$Res> {
+  __$$RegisterSuccessImplCopyWithImpl(
+      _$RegisterSuccessImpl _value, $Res Function(_$RegisterSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$RegisterSuccessImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterSuccessImpl implements _RegisterSuccess {
+  const _$RegisterSuccessImpl(this.user);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'OnboardingState.registerSuccess(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterSuccessImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      __$$RegisterSuccessImplCopyWithImpl<_$RegisterSuccessImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+  }) {
+    return registerSuccess(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+  }) {
+    return registerSuccess?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    required TResult orElse(),
+  }) {
+    if (registerSuccess != null) {
+      return registerSuccess(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+  }) {
+    return registerSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+  }) {
+    return registerSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    required TResult orElse(),
+  }) {
+    if (registerSuccess != null) {
+      return registerSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterSuccess implements OnboardingState {
+  const factory _RegisterSuccess(final AppUser user) = _$RegisterSuccessImpl;
+
+  AppUser get user;
+  @JsonKey(ignore: true)
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RegisterFailedImplCopyWith<$Res> {
+  factory _$$RegisterFailedImplCopyWith(_$RegisterFailedImpl value,
+          $Res Function(_$RegisterFailedImpl) then) =
+      __$$RegisterFailedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$RegisterFailedImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$RegisterFailedImpl>
+    implements _$$RegisterFailedImplCopyWith<$Res> {
+  __$$RegisterFailedImplCopyWithImpl(
+      _$RegisterFailedImpl _value, $Res Function(_$RegisterFailedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$RegisterFailedImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterFailedImpl implements _RegisterFailed {
+  const _$RegisterFailedImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'OnboardingState.registerFailed(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterFailedImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterFailedImplCopyWith<_$RegisterFailedImpl> get copyWith =>
+      __$$RegisterFailedImplCopyWithImpl<_$RegisterFailedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+  }) {
+    return registerFailed(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+  }) {
+    return registerFailed?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    required TResult orElse(),
+  }) {
+    if (registerFailed != null) {
+      return registerFailed(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+  }) {
+    return registerFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+  }) {
+    return registerFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    required TResult orElse(),
+  }) {
+    if (registerFailed != null) {
+      return registerFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterFailed implements OnboardingState {
+  const factory _RegisterFailed(final String message) = _$RegisterFailedImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$RegisterFailedImplCopyWith<_$RegisterFailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1819,17 +1693,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return authenticated(user);
   }
@@ -1840,17 +1708,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return authenticated?.call(user);
   }
@@ -1861,17 +1723,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1886,23 +1742,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return authenticated(this);
   }
@@ -1913,21 +1757,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return authenticated?.call(this);
   }
@@ -1938,21 +1772,11 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -2012,17 +1836,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return unauthenticated();
   }
@@ -2033,17 +1851,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return unauthenticated?.call();
   }
@@ -2054,17 +1866,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -2079,23 +1885,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return unauthenticated(this);
   }
@@ -2106,21 +1900,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return unauthenticated?.call(this);
   }
@@ -2131,21 +1915,11 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -2226,17 +2000,11 @@ class _$LoginPageImpl implements _LoginPage {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
   }) {
     return loginPage(user);
   }
@@ -2247,17 +2015,11 @@ class _$LoginPageImpl implements _LoginPage {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
   }) {
     return loginPage?.call(user);
   }
@@ -2268,17 +2030,11 @@ class _$LoginPageImpl implements _LoginPage {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (loginPage != null) {
@@ -2293,23 +2049,11 @@ class _$LoginPageImpl implements _LoginPage {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
   }) {
     return loginPage(this);
   }
@@ -2320,21 +2064,11 @@ class _$LoginPageImpl implements _LoginPage {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
   }) {
     return loginPage?.call(this);
   }
@@ -2345,21 +2079,11 @@ class _$LoginPageImpl implements _LoginPage {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
     required TResult orElse(),
   }) {
     if (loginPage != null) {
@@ -2376,1732 +2100,4 @@ abstract class _LoginPage implements OnboardingState {
   @JsonKey(ignore: true)
   _$$LoginPageImplCopyWith<_$LoginPageImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CredentialsRetrievedImplCopyWith<$Res> {
-  factory _$$CredentialsRetrievedImplCopyWith(_$CredentialsRetrievedImpl value,
-          $Res Function(_$CredentialsRetrievedImpl) then) =
-      __$$CredentialsRetrievedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$$CredentialsRetrievedImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$CredentialsRetrievedImpl>
-    implements _$$CredentialsRetrievedImplCopyWith<$Res> {
-  __$$CredentialsRetrievedImplCopyWithImpl(_$CredentialsRetrievedImpl _value,
-      $Res Function(_$CredentialsRetrievedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$CredentialsRetrievedImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CredentialsRetrievedImpl implements _CredentialsRetrieved {
-  const _$CredentialsRetrievedImpl({required this.email});
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'OnboardingState.credentialsRetrieved(email: $email)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CredentialsRetrievedImpl &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CredentialsRetrievedImplCopyWith<_$CredentialsRetrievedImpl>
-      get copyWith =>
-          __$$CredentialsRetrievedImplCopyWithImpl<_$CredentialsRetrievedImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return credentialsRetrieved(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return credentialsRetrieved?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (credentialsRetrieved != null) {
-      return credentialsRetrieved(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return credentialsRetrieved(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return credentialsRetrieved?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (credentialsRetrieved != null) {
-      return credentialsRetrieved(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CredentialsRetrieved implements OnboardingState {
-  const factory _CredentialsRetrieved({required final String email}) =
-      _$CredentialsRetrievedImpl;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$CredentialsRetrievedImplCopyWith<_$CredentialsRetrievedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FailedToRetrieveCredentialsImplCopyWith<$Res> {
-  factory _$$FailedToRetrieveCredentialsImplCopyWith(
-          _$FailedToRetrieveCredentialsImpl value,
-          $Res Function(_$FailedToRetrieveCredentialsImpl) then) =
-      __$$FailedToRetrieveCredentialsImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$FailedToRetrieveCredentialsImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res,
-        _$FailedToRetrieveCredentialsImpl>
-    implements _$$FailedToRetrieveCredentialsImplCopyWith<$Res> {
-  __$$FailedToRetrieveCredentialsImplCopyWithImpl(
-      _$FailedToRetrieveCredentialsImpl _value,
-      $Res Function(_$FailedToRetrieveCredentialsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$FailedToRetrieveCredentialsImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FailedToRetrieveCredentialsImpl
-    implements _FailedToRetrieveCredentials {
-  const _$FailedToRetrieveCredentialsImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'OnboardingState.failedToRetrieveCredentials(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailedToRetrieveCredentialsImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailedToRetrieveCredentialsImplCopyWith<_$FailedToRetrieveCredentialsImpl>
-      get copyWith => __$$FailedToRetrieveCredentialsImplCopyWithImpl<
-          _$FailedToRetrieveCredentialsImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return failedToRetrieveCredentials(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return failedToRetrieveCredentials?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (failedToRetrieveCredentials != null) {
-      return failedToRetrieveCredentials(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return failedToRetrieveCredentials(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return failedToRetrieveCredentials?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (failedToRetrieveCredentials != null) {
-      return failedToRetrieveCredentials(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FailedToRetrieveCredentials implements OnboardingState {
-  const factory _FailedToRetrieveCredentials(final String message) =
-      _$FailedToRetrieveCredentialsImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$FailedToRetrieveCredentialsImplCopyWith<_$FailedToRetrieveCredentialsImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CachingCredentialsImplCopyWith<$Res> {
-  factory _$$CachingCredentialsImplCopyWith(_$CachingCredentialsImpl value,
-          $Res Function(_$CachingCredentialsImpl) then) =
-      __$$CachingCredentialsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CachingCredentialsImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$CachingCredentialsImpl>
-    implements _$$CachingCredentialsImplCopyWith<$Res> {
-  __$$CachingCredentialsImplCopyWithImpl(_$CachingCredentialsImpl _value,
-      $Res Function(_$CachingCredentialsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CachingCredentialsImpl implements _CachingCredentials {
-  const _$CachingCredentialsImpl();
-
-  @override
-  String toString() {
-    return 'OnboardingState.cachingCredentials()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CachingCredentialsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return cachingCredentials();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return cachingCredentials?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachingCredentials != null) {
-      return cachingCredentials();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachingCredentials(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachingCredentials?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachingCredentials != null) {
-      return cachingCredentials(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CachingCredentials implements OnboardingState {
-  const factory _CachingCredentials() = _$CachingCredentialsImpl;
-}
-
-/// @nodoc
-abstract class _$$CachedCredentialsSuccessfulImplCopyWith<$Res> {
-  factory _$$CachedCredentialsSuccessfulImplCopyWith(
-          _$CachedCredentialsSuccessfulImpl value,
-          $Res Function(_$CachedCredentialsSuccessfulImpl) then) =
-      __$$CachedCredentialsSuccessfulImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$$CachedCredentialsSuccessfulImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res,
-        _$CachedCredentialsSuccessfulImpl>
-    implements _$$CachedCredentialsSuccessfulImplCopyWith<$Res> {
-  __$$CachedCredentialsSuccessfulImplCopyWithImpl(
-      _$CachedCredentialsSuccessfulImpl _value,
-      $Res Function(_$CachedCredentialsSuccessfulImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$CachedCredentialsSuccessfulImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CachedCredentialsSuccessfulImpl
-    implements _CachedCredentialsSuccessful {
-  const _$CachedCredentialsSuccessfulImpl({required this.email});
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'OnboardingState.cachedCredentialsSuccessful(email: $email)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CachedCredentialsSuccessfulImpl &&
-            (identical(other.email, email) || other.email == email));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CachedCredentialsSuccessfulImplCopyWith<_$CachedCredentialsSuccessfulImpl>
-      get copyWith => __$$CachedCredentialsSuccessfulImplCopyWithImpl<
-          _$CachedCredentialsSuccessfulImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsSuccessful(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsSuccessful?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachedCredentialsSuccessful != null) {
-      return cachedCredentialsSuccessful(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsSuccessful(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsSuccessful?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachedCredentialsSuccessful != null) {
-      return cachedCredentialsSuccessful(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CachedCredentialsSuccessful implements OnboardingState {
-  const factory _CachedCredentialsSuccessful({required final String email}) =
-      _$CachedCredentialsSuccessfulImpl;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$$CachedCredentialsSuccessfulImplCopyWith<_$CachedCredentialsSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CachedCredentialsFailedImplCopyWith<$Res> {
-  factory _$$CachedCredentialsFailedImplCopyWith(
-          _$CachedCredentialsFailedImpl value,
-          $Res Function(_$CachedCredentialsFailedImpl) then) =
-      __$$CachedCredentialsFailedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$CachedCredentialsFailedImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$CachedCredentialsFailedImpl>
-    implements _$$CachedCredentialsFailedImplCopyWith<$Res> {
-  __$$CachedCredentialsFailedImplCopyWithImpl(
-      _$CachedCredentialsFailedImpl _value,
-      $Res Function(_$CachedCredentialsFailedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$CachedCredentialsFailedImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CachedCredentialsFailedImpl implements _CachedCredentialsFailed {
-  const _$CachedCredentialsFailedImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'OnboardingState.cachedCredentialsFailed(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CachedCredentialsFailedImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CachedCredentialsFailedImplCopyWith<_$CachedCredentialsFailedImpl>
-      get copyWith => __$$CachedCredentialsFailedImplCopyWithImpl<
-          _$CachedCredentialsFailedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsFailed(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsFailed?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachedCredentialsFailed != null) {
-      return cachedCredentialsFailed(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsFailed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return cachedCredentialsFailed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (cachedCredentialsFailed != null) {
-      return cachedCredentialsFailed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CachedCredentialsFailed implements OnboardingState {
-  const factory _CachedCredentialsFailed(final String message) =
-      _$CachedCredentialsFailedImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$CachedCredentialsFailedImplCopyWith<_$CachedCredentialsFailedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$AuthenticatingBiometricImplCopyWith<$Res> {
-  factory _$$AuthenticatingBiometricImplCopyWith(
-          _$AuthenticatingBiometricImpl value,
-          $Res Function(_$AuthenticatingBiometricImpl) then) =
-      __$$AuthenticatingBiometricImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AuthenticatingBiometricImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$AuthenticatingBiometricImpl>
-    implements _$$AuthenticatingBiometricImplCopyWith<$Res> {
-  __$$AuthenticatingBiometricImplCopyWithImpl(
-      _$AuthenticatingBiometricImpl _value,
-      $Res Function(_$AuthenticatingBiometricImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AuthenticatingBiometricImpl implements _AuthenticatingBiometric {
-  const _$AuthenticatingBiometricImpl();
-
-  @override
-  String toString() {
-    return 'OnboardingState.authenticatingBiometric()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthenticatingBiometricImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return authenticatingBiometric();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return authenticatingBiometric?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (authenticatingBiometric != null) {
-      return authenticatingBiometric();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return authenticatingBiometric(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return authenticatingBiometric?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (authenticatingBiometric != null) {
-      return authenticatingBiometric(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AuthenticatingBiometric implements OnboardingState {
-  const factory _AuthenticatingBiometric() = _$AuthenticatingBiometricImpl;
-}
-
-/// @nodoc
-abstract class _$$BiometricAuthenticationFailedImplCopyWith<$Res> {
-  factory _$$BiometricAuthenticationFailedImplCopyWith(
-          _$BiometricAuthenticationFailedImpl value,
-          $Res Function(_$BiometricAuthenticationFailedImpl) then) =
-      __$$BiometricAuthenticationFailedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$BiometricAuthenticationFailedImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res,
-        _$BiometricAuthenticationFailedImpl>
-    implements _$$BiometricAuthenticationFailedImplCopyWith<$Res> {
-  __$$BiometricAuthenticationFailedImplCopyWithImpl(
-      _$BiometricAuthenticationFailedImpl _value,
-      $Res Function(_$BiometricAuthenticationFailedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$BiometricAuthenticationFailedImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BiometricAuthenticationFailedImpl
-    implements _BiometricAuthenticationFailed {
-  const _$BiometricAuthenticationFailedImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'OnboardingState.biometricAuthenticationFailed(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BiometricAuthenticationFailedImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BiometricAuthenticationFailedImplCopyWith<
-          _$BiometricAuthenticationFailedImpl>
-      get copyWith => __$$BiometricAuthenticationFailedImplCopyWithImpl<
-          _$BiometricAuthenticationFailedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationFailed(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationFailed?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthenticationFailed != null) {
-      return biometricAuthenticationFailed(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationFailed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationFailed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthenticationFailed != null) {
-      return biometricAuthenticationFailed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BiometricAuthenticationFailed implements OnboardingState {
-  const factory _BiometricAuthenticationFailed(final String message) =
-      _$BiometricAuthenticationFailedImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$BiometricAuthenticationFailedImplCopyWith<
-          _$BiometricAuthenticationFailedImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BiometricAuthenticationSuccessfulImplCopyWith<$Res> {
-  factory _$$BiometricAuthenticationSuccessfulImplCopyWith(
-          _$BiometricAuthenticationSuccessfulImpl value,
-          $Res Function(_$BiometricAuthenticationSuccessfulImpl) then) =
-      __$$BiometricAuthenticationSuccessfulImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool status});
-}
-
-/// @nodoc
-class __$$BiometricAuthenticationSuccessfulImplCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res,
-        _$BiometricAuthenticationSuccessfulImpl>
-    implements _$$BiometricAuthenticationSuccessfulImplCopyWith<$Res> {
-  __$$BiometricAuthenticationSuccessfulImplCopyWithImpl(
-      _$BiometricAuthenticationSuccessfulImpl _value,
-      $Res Function(_$BiometricAuthenticationSuccessfulImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_$BiometricAuthenticationSuccessfulImpl(
-      null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BiometricAuthenticationSuccessfulImpl
-    implements _BiometricAuthenticationSuccessful {
-  const _$BiometricAuthenticationSuccessfulImpl(this.status);
-
-  @override
-  final bool status;
-
-  @override
-  String toString() {
-    return 'OnboardingState.biometricAuthenticationSuccessful(status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BiometricAuthenticationSuccessfulImpl &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BiometricAuthenticationSuccessfulImplCopyWith<
-          _$BiometricAuthenticationSuccessfulImpl>
-      get copyWith => __$$BiometricAuthenticationSuccessfulImplCopyWithImpl<
-          _$BiometricAuthenticationSuccessfulImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) signInFailed,
-    required TResult Function(AppUser user) authenticated,
-    required TResult Function() unauthenticated,
-    required TResult Function(AppUser user) loginPage,
-    required TResult Function(String email) credentialsRetrieved,
-    required TResult Function(String message) failedToRetrieveCredentials,
-    required TResult Function() cachingCredentials,
-    required TResult Function(String email) cachedCredentialsSuccessful,
-    required TResult Function(String message) cachedCredentialsFailed,
-    required TResult Function() authenticatingBiometric,
-    required TResult Function(String message) biometricAuthenticationFailed,
-    required TResult Function(bool status) biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationSuccessful(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? signInFailed,
-    TResult? Function(AppUser user)? authenticated,
-    TResult? Function()? unauthenticated,
-    TResult? Function(AppUser user)? loginPage,
-    TResult? Function(String email)? credentialsRetrieved,
-    TResult? Function(String message)? failedToRetrieveCredentials,
-    TResult? Function()? cachingCredentials,
-    TResult? Function(String email)? cachedCredentialsSuccessful,
-    TResult? Function(String message)? cachedCredentialsFailed,
-    TResult? Function()? authenticatingBiometric,
-    TResult? Function(String message)? biometricAuthenticationFailed,
-    TResult? Function(bool status)? biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationSuccessful?.call(status);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? signInFailed,
-    TResult Function(AppUser user)? authenticated,
-    TResult Function()? unauthenticated,
-    TResult Function(AppUser user)? loginPage,
-    TResult Function(String email)? credentialsRetrieved,
-    TResult Function(String message)? failedToRetrieveCredentials,
-    TResult Function()? cachingCredentials,
-    TResult Function(String email)? cachedCredentialsSuccessful,
-    TResult Function(String message)? cachedCredentialsFailed,
-    TResult Function()? authenticatingBiometric,
-    TResult Function(String message)? biometricAuthenticationFailed,
-    TResult Function(bool status)? biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthenticationSuccessful != null) {
-      return biometricAuthenticationSuccessful(status);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SignInFailed value) signInFailed,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_LoginPage value) loginPage,
-    required TResult Function(_CredentialsRetrieved value) credentialsRetrieved,
-    required TResult Function(_FailedToRetrieveCredentials value)
-        failedToRetrieveCredentials,
-    required TResult Function(_CachingCredentials value) cachingCredentials,
-    required TResult Function(_CachedCredentialsSuccessful value)
-        cachedCredentialsSuccessful,
-    required TResult Function(_CachedCredentialsFailed value)
-        cachedCredentialsFailed,
-    required TResult Function(_AuthenticatingBiometric value)
-        authenticatingBiometric,
-    required TResult Function(_BiometricAuthenticationFailed value)
-        biometricAuthenticationFailed,
-    required TResult Function(_BiometricAuthenticationSuccessful value)
-        biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationSuccessful(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SignInFailed value)? signInFailed,
-    TResult? Function(_Authenticated value)? authenticated,
-    TResult? Function(_Unauthenticated value)? unauthenticated,
-    TResult? Function(_LoginPage value)? loginPage,
-    TResult? Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult? Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult? Function(_CachingCredentials value)? cachingCredentials,
-    TResult? Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult? Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult? Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult? Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult? Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-  }) {
-    return biometricAuthenticationSuccessful?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SignInFailed value)? signInFailed,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_LoginPage value)? loginPage,
-    TResult Function(_CredentialsRetrieved value)? credentialsRetrieved,
-    TResult Function(_FailedToRetrieveCredentials value)?
-        failedToRetrieveCredentials,
-    TResult Function(_CachingCredentials value)? cachingCredentials,
-    TResult Function(_CachedCredentialsSuccessful value)?
-        cachedCredentialsSuccessful,
-    TResult Function(_CachedCredentialsFailed value)? cachedCredentialsFailed,
-    TResult Function(_AuthenticatingBiometric value)? authenticatingBiometric,
-    TResult Function(_BiometricAuthenticationFailed value)?
-        biometricAuthenticationFailed,
-    TResult Function(_BiometricAuthenticationSuccessful value)?
-        biometricAuthenticationSuccessful,
-    required TResult orElse(),
-  }) {
-    if (biometricAuthenticationSuccessful != null) {
-      return biometricAuthenticationSuccessful(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BiometricAuthenticationSuccessful implements OnboardingState {
-  const factory _BiometricAuthenticationSuccessful(final bool status) =
-      _$BiometricAuthenticationSuccessfulImpl;
-
-  bool get status;
-  @JsonKey(ignore: true)
-  _$$BiometricAuthenticationSuccessfulImplCopyWith<
-          _$BiometricAuthenticationSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

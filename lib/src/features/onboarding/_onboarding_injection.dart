@@ -26,8 +26,6 @@ class OnboardingInjection{
       () => OnboardingRemoteDataSourceImpl(
         apiCaller: sl(),
         endpoints: sl(),
-        localAuthentication: LocalAuthentication(),
-
       ),
     );
     try {

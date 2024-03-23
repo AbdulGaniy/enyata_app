@@ -12,3 +12,15 @@ class LoginRoute extends GoRouteData {
     return const LoginScreen();
   }
 }
+
+@TypedGoRoute<RegisterRoute>(
+  path: '/register',
+)
+class RegisterRoute extends GoRouteData {
+  const RegisterRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const RegisterScreen();
+  }
+}

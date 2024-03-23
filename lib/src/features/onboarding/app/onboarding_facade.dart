@@ -17,8 +17,25 @@ class OnboardingFacade{
 
   Future<Either<Failure, AppUser>> signInWithEmailAndPassword({required String email, required String password,}) async {
     final task = _onboardingService.signInWithEmailAndPassword(
-        email: Email(email),
-        password: Password(password),
+        email: email,
+        password: password,
+    );
+    return task.run();
+  }
+
+  Future<Either<Failure, AppUser>> registerUser({
+    required String email,
+    required String password,
+    required String username,
+    required String firstName,
+    required String lastName,
+  }) async {
+    final task = _onboardingService.registerUser(
+        email: email,
+        password: password,
+        username: username,
+        firstName: firstName,
+        lastName: lastName,
     );
     return task.run();
   }
@@ -40,22 +57,4 @@ class OnboardingFacade{
     return task.run();
   }
 
-
-  Future<Either<Failure, String>> retrieveCachedCredentials() async {
-    "This ran and the email is ${_onboardingService.retrieveCachedCredentials().run()}".log();
-    final task = _onboardingService.retrieveCachedCredentials();
-    return task.run();
-  }
-
-  Future<Either<Failure, bool>> biometricAuthentication() async {
-    final task = _onboardingService.biometricAuthentication();
-    return task.run();
-  }
-
-  Future<Either<Failure, AppUser>> loginWithBiometric({required String email}) async{
-    final task =  _onboardingService.biometricLogin(
-        email: Email(email),
-    );
-    return task.run();
-  }
 }

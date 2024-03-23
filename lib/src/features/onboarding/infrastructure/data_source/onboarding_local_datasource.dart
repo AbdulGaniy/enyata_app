@@ -16,6 +16,7 @@ abstract class OnboardingLocalDataSource{
   Future<Unit> cacheUser(AppUserModel user);
   Future<AppUserModel> getCachedUser();
   Future<Unit> clearCachedUser();
+  Future<Unit> saveUserWithJwt(AppUserModel userModel);
   Future<Unit> cacheCredentials(String email);
   Future<String> retrieveCachedCredentials();
 }
@@ -37,11 +38,24 @@ class HiveOnboardingLocalDataSourceImpl implements OnboardingLocalDataSource{
 
   @override
   Future<AppUserModel> getCachedUser() async {
+    _box.clear();
     final userJson = _box.get(OnboardingStorageKeys.userModel);
     if(userJson != null){
       return AppUserModel.fromJson(jsonDecode(userJson));
     }
     throw Exception('No user found');
+  }
+
+
+  @override
+  Future<Unit> saveUserWithJwt(AppUserModel userModel) async {
+    final jsonRaw = jsonEncode(userModel.toJson());
+
+    "Saving user with jwt to cache: key: ${OnboardingStorageKeys.userModel} $jsonRaw"
+        .log();
+
+    await _box.put(OnboardingStorageKeys.userModel, jsonRaw);
+    return unit;
   }
 
   @override

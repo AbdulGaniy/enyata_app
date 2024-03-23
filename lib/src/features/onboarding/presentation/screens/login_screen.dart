@@ -27,21 +27,16 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   late final PageTextManager _pageTextManager;
 
-  final emailKey = "emailKey";
+  final emailKey = "email";
 
-  final passwordKey= "passwordKey";
+  final passwordKey = "password";
 
-
+  final ValueNotifier<bool> _isEnabledNotifier = ValueNotifier(false);
 
   @override
   void initState() {
     super.initState();
     _initFields();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   @override
@@ -55,9 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             AppSvgIcon(
               context.icons.srexLogo,
-
-
-                ),
+            ),
             const Gap(10),
             AppText(
               params: AppTextParams(
@@ -69,81 +62,88 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const Gap(10),
-
-            AppText(params: AppTextParams(
-              text: "Deliver Anywhere",
-              textStyle: AppTextStyles.bodyRegular,
-              color: context.colorScheme.background,
-              fontWeight: FontWeight.w400,
+            AppText(
+              params: AppTextParams(
+                text: "Deliver Anywhere",
+                textStyle: AppTextStyles.bodyRegular,
+                color: context.colorScheme.background,
+                fontWeight: FontWeight.w400,
+              ),
             ),
-            ),
-
-
-
             const Gap(10),
-            AppTextField(labelText: "Email",
-                hint: "heresanexample@email.com",
-                textController: _pageTextManager.field(emailKey),
+            AppTextField(
+              labelText: 'Email',
+              textController: _pageTextManager.field(emailKey),
               type: TextFieldType.email,
+              hint: "Enter your email",
             ),
-            const Gap(10),
-            AppTextField(labelText: "Password",
-              hint: "Enter Password",
+            const Gap(20),
+            AppTextField(
+              labelText: 'Password',
               textController: _pageTextManager.field(passwordKey),
+              hint: "Enter Password",
               type: TextFieldType.password,
             ),
-            const Gap(10),
 
+            const Gap(10),
             Row(
-              mainAxisAlignment:MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                AppText(params: AppTextParams(
-                  text: "Forgot Password ?",
-                  textStyle: AppTextStyles.bodyRegular,
-                  color: context.colorScheme.background,
-                  fontWeight: FontWeight.w400,
+                AppText(
+                  params: AppTextParams(
+                    text: "Forgot Password ?",
+                    textStyle: AppTextStyles.bodyRegular,
+                    color: context.colorScheme.background,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-                ),
-                AppText(params: AppTextParams(
-                  text: "Recover",
-                  textStyle: AppTextStyles.bodyRegular,
-                  color: context.colorScheme.background,
-                  fontWeight: FontWeight.w600,
-                ),
+                AppText(
+                  params: AppTextParams(
+                    text: "Recover",
+                    textStyle: AppTextStyles.bodyRegular,
+                    color: context.colorScheme.background,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
             const Gap(60),
-            AppButton(
-                params: AppButtonParams(
-                  text: "Sign in",
-                  isFullWidth: true,
-                  onPressed: (){},
-                  backgroundColor: context.customColorScheme.primary
-                )
+            BlocConsumer<OnboardingBloc, OnboardingState>(
+              listener: _blocListener,
+              builder: (context, state) {
+                final isLoading =
+                    state.maybeWhen(orElse: () => false, loading: () => true);
+                return AppButton(
+                    params: AppButtonParams(
+                        text: "Sign in",
+                        isFullWidth: true,
+                        onPressed: () => _handleLogin(context),
+                        isLoading: isLoading,
+                        backgroundColor: context.customColorScheme.primary));
+              },
             ),
             const Gap(50),
             Row(
-              mainAxisAlignment:MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppText(params: AppTextParams(
-                  text: "Don't have an account?",
-                  textStyle: AppTextStyles.bodyRegular,
-                  color: context.colorScheme.background,
-                  fontWeight: FontWeight.w400,
+                AppText(
+                  params: AppTextParams(
+                    text: "Don't have an account?",
+                    textStyle: AppTextStyles.bodyRegular,
+                    color: context.colorScheme.background,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-                ),
-                AppText(params: AppTextParams(
-                  text: "Sign Up",
-                  textStyle: AppTextStyles.bodyRegular,
-                  color: context.colorScheme.background,
-                  fontWeight: FontWeight.w600,
-                ),
+                AppText(
+                  params: AppTextParams(
+                    text: "Sign Up",
+                    textStyle: AppTextStyles.bodyRegular,
+                    color: context.colorScheme.background,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
-
-
           ],
         ),
       )),
@@ -152,12 +152,35 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _initFields() {
     _pageTextManager = PageTextManager()
-        ..addField(emailKey, [
-          Validators.required(),
-          Validators.email()
-        ])..addField(passwordKey, [
-          Validators.required(),
-          Validators.password()
-      ]);
+      ..addField(
+        emailKey,
+        [Validators.required(), Validators.email()],
+      )
+      ..addField(
+        passwordKey,
+        [Validators.required(), Validators.password()],
+      );
+  }
+
+  _handleLogin(BuildContext context) async {
+    if (_pageTextManager.validate()) {
+      final password = _pageTextManager.getFieldData(passwordKey);
+      final email = _pageTextManager.getFieldData(emailKey);
+
+      context.read<OnboardingBloc>().add(
+          OnboardingEvent.signInWithEmailAndPassword(
+              email: email,
+              password: password,
+          ));
+    }
+  }
+
+  void _blocListener(BuildContext context, OnboardingState state) {
+    state.maybeWhen(
+      orElse: () {},
+      signInFailed: (message) {
+        context.showErrorOverlay(title: "Sign in failed", message: message);
+      },
+    );
   }
 }

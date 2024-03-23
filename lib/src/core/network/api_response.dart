@@ -17,7 +17,7 @@ class ApiResponse<T> {
     return ApiResponse(
       data: json['data'],
       statusCode: statusCode,
-      message: json['message'] ?? "Something went wrong",
+      message: json['code'] ?? "Something went wrong",
     );
   }
 

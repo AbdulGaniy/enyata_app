@@ -11,8 +11,16 @@ abstract class OnboardingService{
   TaskEither<Failure, AppUser> checkLoginState();
 
   TaskEither<Failure, AppUser> signInWithEmailAndPassword({
-    required Email email,
-    required Password password,
+    required String email,
+    required String password,
+  });
+
+  TaskEither<Failure, AppUser> registerUser({
+    required String email,
+    required String password,
+    required String username,
+    required String firstName,
+    required String lastName,
   });
 
   TaskEither<Failure, Unit> cacheUser(AppUser appUser);
@@ -25,12 +33,5 @@ abstract class OnboardingService{
     required String email,
   });
 
-  TaskEither<Failure, String>retrieveCachedCredentials();
-
-  TaskEither<Failure, bool> biometricAuthentication();
-
-  TaskEither<Failure, AppUser> biometricLogin({
-    required Email email,
-  });
 
 }

@@ -26,7 +26,7 @@ class App{
 
   static _getConfig() {
     return AppConfig(
-      apiMsEndpoint: "http://161.97.66.249/NecoHrm/api/Mobile",
+      apiMsEndpoint: "https://srex.swiftspeed.org/api",
     );
   }
 

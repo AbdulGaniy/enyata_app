@@ -73,7 +73,7 @@ class _HomePageLandingState extends State<HomePageLanding> {
 
   List<Widget> _getChildren() {
     return [
-      const HomeScreen(),
+      Container(),
      Container()
     ];
   }

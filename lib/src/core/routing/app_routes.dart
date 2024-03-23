@@ -9,6 +9,7 @@ import 'package:srex/injection.dart';
 import '../../features/home/presentation/home_page_landing.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../features/onboarding/presentation/screens/login_screen.dart';
+import '../../features/onboarding/presentation/screens/register_screen.dart';
 import '../../features/start_up/presentation/splash_screen.dart';
 import '../../features/start_up/presentation/welcome_screen.dart';
 

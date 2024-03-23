@@ -28,6 +28,11 @@ class AuthApi{
   final _authState = BehaviorSubject<AppUser?>();
   Stream<AppUser?> get authStateStream => _authState.stream;
 
+  AppUser?
+  _user; //
+
+  bool isAuthenticated() => _currentUser != null && _user != null;
+
   static bool _isInitialized = false;
   static AuthApi? _instance;
 
@@ -43,7 +48,7 @@ class AuthApi{
 
   AppUser? _currentUser;
   AppUser get currentUser => _currentUser ?? AppUser.empty;
-  bool isAuthenticated() => _currentUser != null;
+
 
   void newUser(AppUser user) {
     _currentUser = user;
@@ -67,23 +72,10 @@ class AuthApi{
     );
   }
 
-  Future<bool> updateClockInStatus({required bool clockedIn, required DateTime clockedInTime}) async {
-    if (_currentUser == null) {
-      return false;
-    }
-    final updatedUser = _currentUser!.copyWith(clockedIn: clockedIn, clockedInTime: clockedInTime);
-    final result = await _onboardingFacade.updateUserInCache(updatedUser: updatedUser);
-
-    return result.fold<bool>(
-          (failure) => false,
-          (_) {
-        _currentUser = updatedUser;
-        _authState.add(_currentUser);
-
-        return true;
-      },
-    );
+  void holdUser(AppUser user) {
+    _user = user;
   }
+
 
 
 }

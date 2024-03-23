@@ -22,11 +22,8 @@ OnboardingBloc({
   })  : _onboardingFacade = onboardingFacade,
         super(const OnboardingState.initial()) {
     on<_SignIn>(_handleSignInWithEmailAndPassword,);
+    on<_Register>(_handleRegister);
     on<_CheckLoginState>(_handleCheckLoginState);
-    on<_CacheCredentials>(_handleCacheCredentials);
-    on<_RetrieveCachedCredentials>(_handleRetrieveCachedCredentials);
-    on<_BiometricAuthentication>(_handleBiometricAuthentication);
-    on<_BiometricLogin>(_handleBiometricLogin);
   }
 
   FutureOr<void> _handleSignInWithEmailAndPassword(_SignIn event, Emitter<OnboardingState> emit) async{
@@ -41,57 +38,38 @@ OnboardingBloc({
     );
   }
 
-  FutureOr<void> _handleBiometricLogin(_BiometricLogin event, Emitter<OnboardingState> emit) async{
-     emit(const OnboardingState.loading());
-      final result = await _onboardingFacade.loginWithBiometric(email: event.email);
-      result.fold(
-          (failure) => emit(OnboardingState.signInFailed(failure.message)),
-          (user) => emit(OnboardingState.authenticated(user)),
-      );
-  }
 
   FutureOr<void> _handleCheckLoginState(_CheckLoginState event, Emitter<OnboardingState> emit) async{
   final result = await _onboardingFacade.checkLoginState();
   result.fold(
     (failure) => emit(const OnboardingState.unauthenticated()),
     (user) {
-      "ue: $user".log();
-      user.clockedIn ? emit(OnboardingState.authenticated(user)):
-      emit(OnboardingState.loginPage(user));
+      emit(OnboardingState.authenticated(user),
+      );
     }
   );
   }
 
 
-  FutureOr<void> _handleCacheCredentials(_CacheCredentials event, Emitter<OnboardingState> emit) async{
-      emit(const OnboardingState.cachingCredentials());
-    final res = await _onboardingFacade.cacheUserDetails(email: event.email);
-    res.fold(
-            (failure) => emit( OnboardingState.cachedCredentialsFailed(failure.message)),
-            (success) => emit(OnboardingState.cachedCredentialsSuccessful(email: event.email)),
-    );
-  }
 
-  FutureOr<void> _handleRetrieveCachedCredentials(_RetrieveCachedCredentials event, Emitter<OnboardingState> emit) async{
-    final res = await _onboardingFacade.retrieveCachedCredentials();
-    res.fold(
-            (failure) => emit(OnboardingState.cachedCredentialsFailed(failure.message)),
-            (email) => emit( OnboardingState.credentialsRetrieved(
-                  email: email ,
-            ),
+
+  FutureOr<void> _handleRegister(_Register event, Emitter<OnboardingState> emit) async{
+    emit(const _Loading());
+    final result = await _onboardingFacade.registerUser(
+      email: event.email,
+      password: event.password,
+      username: event.userName,
+      firstName: event.firstName,
+      lastName: event.lastName,
+    );
+
+    result.fold(
+          (failure) => emit(
+        OnboardingState.registerFailed(failure.message),
       ),
+          (user) {
+        emit(OnboardingState.registerSuccess(user));
+      },
     );
   }
-
-  FutureOr<void> _handleBiometricAuthentication(_BiometricAuthentication event, Emitter<OnboardingState> emit) async{
-     emit(const OnboardingState.authenticatingBiometric());
-
-     final res = await _onboardingFacade.biometricAuthentication();
-     res.fold(
-       (failure) => emit(OnboardingState.biometricAuthenticationFailed(failure.message)),
-       (success) => emit(OnboardingState.biometricAuthenticationSuccessful(success)),
-     );
-  }
-
-
 }

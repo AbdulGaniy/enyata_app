@@ -2,6 +2,7 @@
 import 'package:local_auth/local_auth.dart';
 import 'package:srex/src/core/errors/exceptions.dart';
 import 'package:srex/src/features/onboarding/infrastructure/models/app_user_model.dart';
+import 'package:ui_package/configs/_config.dart';
 
 import '../../../../core/configs/app_config.dart';
 import '../../../../core/network/_network.dart';
@@ -12,66 +13,61 @@ abstract class OnboardingRemoteDataSource {
     required String password,
 });
 
-  Future<bool> biometricAuthentication();
-
-  Future<AppUserModel> loginWithBiometric({required String email});
+  Future<AppUserModel> registerUser({
+    required String email,
+    required String password,
+    required String username,
+    required String firstName,
+    required String lastName,
+  });
 }
 
 
 class OnboardingRemoteDataSourceImpl implements OnboardingRemoteDataSource{
   final ApiCaller _apiCaller;
   final ApiMsEndpoints _endpoints;
-  final LocalAuthentication _localAuthentication;
 
   OnboardingRemoteDataSourceImpl({
     required ApiCaller apiCaller,
     required ApiMsEndpoints endpoints,
-    required LocalAuthentication localAuthentication,
   }) : _apiCaller = apiCaller,
-       _endpoints = endpoints,
-       _localAuthentication = localAuthentication;
+       _endpoints = endpoints;
 
   @override
   Future<AppUserModel> signInWithEmailAndPassword({required String email, required String password}) async{
     final res = await _apiCaller.post(
         url: _endpoints.signInWithEmailAndPassword,
         body: {
-          "username": email,
+          "emailOrUsername": email,
           "password": password,
         }
     );
     if(res.isSuccessful){
-      return AppUserModel.fromJson(res.data);
+      res.message.log();
+      return AppUserModel.fromJson(res.data['user_data']);
     }
+    res.message.log();
     throw CustomException(res.message);
+
   }
 
   @override
-  Future<bool> biometricAuthentication() async{
-     try{
-       return await _localAuthentication.authenticate(
-         localizedReason: 'Please authenticate to login',
-         options: const AuthenticationOptions(
-           stickyAuth: true,
-           sensitiveTransaction: true,
-         ),
-       );
-     }catch(e){
-       throw CustomException(e.toString());
-     }
-  }
-
-  @override
-  Future<AppUserModel> loginWithBiometric({required String email}) async{
+  Future<AppUserModel> registerUser({required String email, required String password, required String username, required String firstName, required String lastName}) async{
     final res = await _apiCaller.post(
-        url: _endpoints.biometric,
+        url: _endpoints.registerUser,
         body: {
-          "username": email,
+          "email": email,
+          "password": password,
+          "username": username,
+          "firstName": firstName,
+          "lastName": lastName,
         }
     );
     if(res.isSuccessful){
-      return AppUserModel.fromJson(res.data);
+      res.message.log();
+      return AppUserModel.fromJson(res.data['user_data']);
     }
+    res.message.log();
     throw CustomException(res.message);
   }
 

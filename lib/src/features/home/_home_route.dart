@@ -8,7 +8,7 @@ class HomeRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const HomeScreen();
+    return Container();
   }
 }
 

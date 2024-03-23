@@ -9,6 +9,14 @@ class OnboardingEvent with _$OnboardingEvent {
     required String password,
   }) = _SignIn;
 
+  const factory OnboardingEvent.register({
+    required String email,
+    required String password,
+    required String userName,
+    required String firstName,
+    required String lastName,
+}) = _Register;
+
   const factory OnboardingEvent.checkLoginState() = _CheckLoginState;
 
 
@@ -16,11 +24,4 @@ class OnboardingEvent with _$OnboardingEvent {
     required String email,
   }) = _CacheCredentials;
 
-  const factory OnboardingEvent.biometricLogin({
-    required String email,
-  }) = _BiometricLogin;
-
-  const factory OnboardingEvent.retrieveCachedCredentials() = _RetrieveCachedCredentials;
-
-  const factory OnboardingEvent.biometricAuthentication() = _BiometricAuthentication;
 }

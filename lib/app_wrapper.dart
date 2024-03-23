@@ -72,7 +72,7 @@ class _AppWrapperState extends State<AppWrapper> {
   _routeToWelcomeScreen(BuildContext context) {
     "User is unauthenticated.".log();
     AuthApi.instance.logout();
-    router.go(const LoginRoute().location);
+    router.go(const WelcomeRoute().location);
   }
 
   void _goToHomeScreen(BuildContext context) {
