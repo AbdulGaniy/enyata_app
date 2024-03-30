@@ -57,4 +57,14 @@ class OnboardingFacade{
     return task.run();
   }
 
+  Future<Either<Failure, String>> sendOtp({required String email}) async {
+    final task = _onboardingService.sendOtp(email: email);
+    return task.run();
+  }
+
+  Future<Either<Failure, String>> verifyOtp({required String token, required String otp}) async {
+    final task = _onboardingService.verifyOtp(token: token, otp: otp);
+    return task.run();
+  }
+
 }

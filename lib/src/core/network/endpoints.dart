@@ -5,6 +5,10 @@ class ApiMsEndpoints {
 
   String get registerUser => '$baseUrl/signup';
 
+  String get sendOtp => '$baseUrl/sendotp';
+
+  String get verifyOtp => '$baseUrl/confirmotp';
+
   // make this a singleton class
   factory ApiMsEndpoints.init({required String baseUrl}) {
     return _instance ??= ApiMsEndpoints._internal(baseUrl: baseUrl);
@@ -13,6 +17,8 @@ class ApiMsEndpoints {
   static ApiMsEndpoints? _instance;
 
   ApiMsEndpoints._internal({required this.baseUrl});
+
+
 
 
 

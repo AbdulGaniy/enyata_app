@@ -38,7 +38,7 @@ class HiveOnboardingLocalDataSourceImpl implements OnboardingLocalDataSource{
 
   @override
   Future<AppUserModel> getCachedUser() async {
-    _box.clear();
+    // _box.clear();
     final userJson = _box.get(OnboardingStorageKeys.userModel);
     if(userJson != null){
       return AppUserModel.fromJson(jsonDecode(userJson));

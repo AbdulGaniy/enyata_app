@@ -20,6 +20,15 @@ abstract class OnboardingRemoteDataSource {
     required String firstName,
     required String lastName,
   });
+
+  Future<String> sendOtp({
+    required String email,
+  });
+
+  Future<String> confirmOtp({
+    required String otp,
+    required String token,
+  });
 }
 
 
@@ -66,6 +75,40 @@ class OnboardingRemoteDataSourceImpl implements OnboardingRemoteDataSource{
     if(res.isSuccessful){
       res.message.log();
       return AppUserModel.fromJson(res.data['user_data']);
+    }
+    res.message.log();
+    throw CustomException(res.message);
+  }
+
+
+  @override
+  Future<String> sendOtp({required String email}) async{
+    final res = await _apiCaller.post(
+    url: _endpoints.sendOtp,
+    body: {
+      "emailOrUsername": email,
+    }
+    );
+    if(res.isSuccessful){
+      res.message.log();
+      return res.message;
+    }
+    res.message.log();
+    throw CustomException(res.message);
+  }
+
+  @override
+  Future<String> confirmOtp({required String otp, required String token}) async{
+    final res = await _apiCaller.post(
+        url: _endpoints.verifyOtp,
+        body: {
+          "otp": otp,
+          "token": token,
+        }
+    );
+    if(res.isSuccessful){
+      res.message.log();
+      return res.message;
     }
     res.message.log();
     throw CustomException(res.message);

@@ -188,6 +188,52 @@ class OnboardingServiceAdapter extends OnboardingService
     );
   }
 
+  @override
+  TaskEither<Failure, String> sendOtp({required String email}) {
+   return TaskEither.tryCatch(
+     () async {
+       return await _remoteDataSource.sendOtp(email: email);
+     },
+     (error, stackTrace) {
+       error.log();
+       stackTrace.log();
+
+       if (error is NoInternetFailure) {
+         return error;
+       }
+
+       if (error is CustomException) {
+         return ServerFailure(message: error.message);
+       }
+
+       return ServerFailure(message: error.toString());
+     },
+   );
+  }
+
+  @override
+  TaskEither<Failure, String> verifyOtp({required String token, required String otp}) {
+    return TaskEither.tryCatch(
+            () async {
+              return await _remoteDataSource.confirmOtp(token: token, otp: otp);
+            },
+            (error, stackTrace) {
+          error.log();
+          stackTrace.log();
+
+          if (error is NoInternetFailure) {
+            return error;
+          }
+
+          if (error is CustomException) {
+            return ServerFailure(message: error.message);
+          }
+
+          return ServerFailure(message: error.toString());
+        },
+    );
+  }
+
 
 
 

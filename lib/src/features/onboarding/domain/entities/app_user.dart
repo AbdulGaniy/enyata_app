@@ -7,6 +7,7 @@ class AppUser extends Equatable{
    final bool isVerified;
    final int walletBalance;
    final String token;
+   final String email;
 
   const AppUser({
   required this.id,
@@ -14,7 +15,8 @@ class AppUser extends Equatable{
     required this.lastName,
     required this.isVerified,
     required this.walletBalance,
-    required this.token
+    required this.token,
+    required this.email,
 });
 
   static AppUser empty =const  AppUser(
@@ -24,6 +26,7 @@ class AppUser extends Equatable{
     isVerified : false,
     token : "",
     walletBalance: 0,
+    email: ""
   );
 
   AppUser copyWith({
@@ -33,6 +36,7 @@ class AppUser extends Equatable{
     String? token,
     bool? isVerified,
     int? walletBalance,
+    String? email,
 }) {
     return AppUser(
       id: id ?? this.id,
@@ -41,6 +45,7 @@ class AppUser extends Equatable{
       token: token ?? this.token,
       isVerified: isVerified ?? this.isVerified,
       walletBalance: walletBalance ?? this.walletBalance,
+      email: email ?? this.email,
     );
   }
 
@@ -53,5 +58,6 @@ class AppUser extends Equatable{
     token,
     isVerified,
     walletBalance,
+    email,
   ];
 }

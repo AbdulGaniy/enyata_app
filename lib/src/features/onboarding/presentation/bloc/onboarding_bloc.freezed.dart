@@ -25,6 +25,9 @@ mixin _$OnboardingEvent {
         register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +39,9 @@ mixin _$OnboardingEvent {
         register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +52,9 @@ mixin _$OnboardingEvent {
         register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +64,9 @@ mixin _$OnboardingEvent {
     required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +75,9 @@ mixin _$OnboardingEvent {
     TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +86,9 @@ mixin _$OnboardingEvent {
     TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,6 +192,9 @@ class _$SignInImpl implements _SignIn {
         register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
   }) {
     return signInWithEmailAndPassword(email, password);
   }
@@ -188,6 +209,9 @@ class _$SignInImpl implements _SignIn {
         register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
   }) {
     return signInWithEmailAndPassword?.call(email, password);
   }
@@ -201,6 +225,9 @@ class _$SignInImpl implements _SignIn {
         register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPassword != null) {
@@ -216,6 +243,9 @@ class _$SignInImpl implements _SignIn {
     required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
   }) {
     return signInWithEmailAndPassword(this);
   }
@@ -227,6 +257,9 @@ class _$SignInImpl implements _SignIn {
     TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
   }) {
     return signInWithEmailAndPassword?.call(this);
   }
@@ -238,6 +271,9 @@ class _$SignInImpl implements _SignIn {
     TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPassword != null) {
@@ -377,6 +413,9 @@ class _$RegisterImpl implements _Register {
         register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
   }) {
     return register(email, password, userName, firstName, lastName);
   }
@@ -391,6 +430,9 @@ class _$RegisterImpl implements _Register {
         register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
   }) {
     return register?.call(email, password, userName, firstName, lastName);
   }
@@ -404,6 +446,9 @@ class _$RegisterImpl implements _Register {
         register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -419,6 +464,9 @@ class _$RegisterImpl implements _Register {
     required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
   }) {
     return register(this);
   }
@@ -430,6 +478,9 @@ class _$RegisterImpl implements _Register {
     TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
   }) {
     return register?.call(this);
   }
@@ -441,6 +492,9 @@ class _$RegisterImpl implements _Register {
     TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -513,6 +567,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
         register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
   }) {
     return checkLoginState();
   }
@@ -527,6 +584,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
         register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
   }) {
     return checkLoginState?.call();
   }
@@ -540,6 +600,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
         register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (checkLoginState != null) {
@@ -555,6 +618,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
     required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
   }) {
     return checkLoginState(this);
   }
@@ -566,6 +632,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
     TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
   }) {
     return checkLoginState?.call(this);
   }
@@ -577,6 +646,9 @@ class _$CheckLoginStateImpl implements _CheckLoginState {
     TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (checkLoginState != null) {
@@ -662,6 +734,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
         register,
     required TResult Function() checkLoginState,
     required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
   }) {
     return cacheCredentials(email);
   }
@@ -676,6 +751,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
         register,
     TResult? Function()? checkLoginState,
     TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
   }) {
     return cacheCredentials?.call(email);
   }
@@ -689,6 +767,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
         register,
     TResult Function()? checkLoginState,
     TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (cacheCredentials != null) {
@@ -704,6 +785,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
     required TResult Function(_Register value) register,
     required TResult Function(_CheckLoginState value) checkLoginState,
     required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
   }) {
     return cacheCredentials(this);
   }
@@ -715,6 +799,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
     TResult? Function(_Register value)? register,
     TResult? Function(_CheckLoginState value)? checkLoginState,
     TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
   }) {
     return cacheCredentials?.call(this);
   }
@@ -726,6 +813,9 @@ class _$CacheCredentialsImpl implements _CacheCredentials {
     TResult Function(_Register value)? register,
     TResult Function(_CheckLoginState value)? checkLoginState,
     TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
     required TResult orElse(),
   }) {
     if (cacheCredentials != null) {
@@ -746,6 +836,531 @@ abstract class _CacheCredentials implements OnboardingEvent {
 }
 
 /// @nodoc
+abstract class _$$SendOTPImplCopyWith<$Res> {
+  factory _$$SendOTPImplCopyWith(
+          _$SendOTPImpl value, $Res Function(_$SendOTPImpl) then) =
+      __$$SendOTPImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$SendOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$SendOTPImpl>
+    implements _$$SendOTPImplCopyWith<$Res> {
+  __$$SendOTPImplCopyWithImpl(
+      _$SendOTPImpl _value, $Res Function(_$SendOTPImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$SendOTPImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SendOTPImpl implements _SendOTP {
+  const _$SendOTPImpl({required this.email});
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.sendOtp(email: $email)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendOTPImpl &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendOTPImplCopyWith<_$SendOTPImpl> get copyWith =>
+      __$$SendOTPImplCopyWithImpl<_$SendOTPImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password)
+        signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
+    required TResult Function() checkLoginState,
+    required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
+  }) {
+    return sendOtp(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)?
+        signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult? Function()? checkLoginState,
+    TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
+  }) {
+    return sendOtp?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult Function()? checkLoginState,
+    TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (sendOtp != null) {
+      return sendOtp(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
+    required TResult Function(_CheckLoginState value) checkLoginState,
+    required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
+  }) {
+    return sendOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_CheckLoginState value)? checkLoginState,
+    TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
+  }) {
+    return sendOtp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
+    TResult Function(_CheckLoginState value)? checkLoginState,
+    TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (sendOtp != null) {
+      return sendOtp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendOTP implements OnboardingEvent {
+  const factory _SendOTP({required final String email}) = _$SendOTPImpl;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$$SendOTPImplCopyWith<_$SendOTPImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyOTPImplCopyWith<$Res> {
+  factory _$$VerifyOTPImplCopyWith(
+          _$VerifyOTPImpl value, $Res Function(_$VerifyOTPImpl) then) =
+      __$$VerifyOTPImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String token, String otp});
+}
+
+/// @nodoc
+class __$$VerifyOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$VerifyOTPImpl>
+    implements _$$VerifyOTPImplCopyWith<$Res> {
+  __$$VerifyOTPImplCopyWithImpl(
+      _$VerifyOTPImpl _value, $Res Function(_$VerifyOTPImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? token = null,
+    Object? otp = null,
+  }) {
+    return _then(_$VerifyOTPImpl(
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      otp: null == otp
+          ? _value.otp
+          : otp // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyOTPImpl implements _VerifyOTP {
+  const _$VerifyOTPImpl({required this.token, required this.otp});
+
+  @override
+  final String token;
+  @override
+  final String otp;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.verifyOtp(token: $token, otp: $otp)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOTPImpl &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.otp, otp) || other.otp == otp));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, token, otp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyOTPImplCopyWith<_$VerifyOTPImpl> get copyWith =>
+      __$$VerifyOTPImplCopyWithImpl<_$VerifyOTPImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password)
+        signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
+    required TResult Function() checkLoginState,
+    required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
+  }) {
+    return verifyOtp(token, otp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)?
+        signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult? Function()? checkLoginState,
+    TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
+  }) {
+    return verifyOtp?.call(token, otp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult Function()? checkLoginState,
+    TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (verifyOtp != null) {
+      return verifyOtp(token, otp);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
+    required TResult Function(_CheckLoginState value) checkLoginState,
+    required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
+  }) {
+    return verifyOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_CheckLoginState value)? checkLoginState,
+    TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
+  }) {
+    return verifyOtp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
+    TResult Function(_CheckLoginState value)? checkLoginState,
+    TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (verifyOtp != null) {
+      return verifyOtp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyOTP implements OnboardingEvent {
+  const factory _VerifyOTP(
+      {required final String token,
+      required final String otp}) = _$VerifyOTPImpl;
+
+  String get token;
+  String get otp;
+  @JsonKey(ignore: true)
+  _$$VerifyOTPImplCopyWith<_$VerifyOTPImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AuthenticateUserImplCopyWith<$Res> {
+  factory _$$AuthenticateUserImplCopyWith(_$AuthenticateUserImpl value,
+          $Res Function(_$AuthenticateUserImpl) then) =
+      __$$AuthenticateUserImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class __$$AuthenticateUserImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$AuthenticateUserImpl>
+    implements _$$AuthenticateUserImplCopyWith<$Res> {
+  __$$AuthenticateUserImplCopyWithImpl(_$AuthenticateUserImpl _value,
+      $Res Function(_$AuthenticateUserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$AuthenticateUserImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthenticateUserImpl implements _AuthenticateUser {
+  const _$AuthenticateUserImpl(this.user);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'OnboardingEvent.authenticateWithUserJWT(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthenticateUserImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthenticateUserImplCopyWith<_$AuthenticateUserImpl> get copyWith =>
+      __$$AuthenticateUserImplCopyWithImpl<_$AuthenticateUserImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password)
+        signInWithEmailAndPassword,
+    required TResult Function(String email, String password, String userName,
+            String firstName, String lastName)
+        register,
+    required TResult Function() checkLoginState,
+    required TResult Function(String email) cacheCredentials,
+    required TResult Function(String email) sendOtp,
+    required TResult Function(String token, String otp) verifyOtp,
+    required TResult Function(AppUser user) authenticateWithUserJWT,
+  }) {
+    return authenticateWithUserJWT(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)?
+        signInWithEmailAndPassword,
+    TResult? Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult? Function()? checkLoginState,
+    TResult? Function(String email)? cacheCredentials,
+    TResult? Function(String email)? sendOtp,
+    TResult? Function(String token, String otp)? verifyOtp,
+    TResult? Function(AppUser user)? authenticateWithUserJWT,
+  }) {
+    return authenticateWithUserJWT?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signInWithEmailAndPassword,
+    TResult Function(String email, String password, String userName,
+            String firstName, String lastName)?
+        register,
+    TResult Function()? checkLoginState,
+    TResult Function(String email)? cacheCredentials,
+    TResult Function(String email)? sendOtp,
+    TResult Function(String token, String otp)? verifyOtp,
+    TResult Function(AppUser user)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (authenticateWithUserJWT != null) {
+      return authenticateWithUserJWT(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignIn value) signInWithEmailAndPassword,
+    required TResult Function(_Register value) register,
+    required TResult Function(_CheckLoginState value) checkLoginState,
+    required TResult Function(_CacheCredentials value) cacheCredentials,
+    required TResult Function(_SendOTP value) sendOtp,
+    required TResult Function(_VerifyOTP value) verifyOtp,
+    required TResult Function(_AuthenticateUser value) authenticateWithUserJWT,
+  }) {
+    return authenticateWithUserJWT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_CheckLoginState value)? checkLoginState,
+    TResult? Function(_CacheCredentials value)? cacheCredentials,
+    TResult? Function(_SendOTP value)? sendOtp,
+    TResult? Function(_VerifyOTP value)? verifyOtp,
+    TResult? Function(_AuthenticateUser value)? authenticateWithUserJWT,
+  }) {
+    return authenticateWithUserJWT?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignIn value)? signInWithEmailAndPassword,
+    TResult Function(_Register value)? register,
+    TResult Function(_CheckLoginState value)? checkLoginState,
+    TResult Function(_CacheCredentials value)? cacheCredentials,
+    TResult Function(_SendOTP value)? sendOtp,
+    TResult Function(_VerifyOTP value)? verifyOtp,
+    TResult Function(_AuthenticateUser value)? authenticateWithUserJWT,
+    required TResult orElse(),
+  }) {
+    if (authenticateWithUserJWT != null) {
+      return authenticateWithUserJWT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthenticateUser implements OnboardingEvent {
+  const factory _AuthenticateUser(final AppUser user) = _$AuthenticateUserImpl;
+
+  AppUser get user;
+  @JsonKey(ignore: true)
+  _$$AuthenticateUserImplCopyWith<_$AuthenticateUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$OnboardingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -757,6 +1372,12 @@ mixin _$OnboardingState {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -769,6 +1390,12 @@ mixin _$OnboardingState {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -781,6 +1408,12 @@ mixin _$OnboardingState {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -794,6 +1427,12 @@ mixin _$OnboardingState {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -806,6 +1445,12 @@ mixin _$OnboardingState {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -818,6 +1463,12 @@ mixin _$OnboardingState {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -887,6 +1538,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return initial();
   }
@@ -902,6 +1559,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return initial?.call();
   }
@@ -917,6 +1580,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -936,6 +1605,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return initial(this);
   }
@@ -951,6 +1626,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return initial?.call(this);
   }
@@ -966,6 +1647,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1025,6 +1712,12 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return loading();
   }
@@ -1040,6 +1733,12 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return loading?.call();
   }
@@ -1055,6 +1754,12 @@ class _$LoadingImpl implements _Loading {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1074,6 +1779,12 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return loading(this);
   }
@@ -1089,6 +1800,12 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return loading?.call(this);
   }
@@ -1104,6 +1821,12 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1189,6 +1912,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return signInFailed(message);
   }
@@ -1204,6 +1933,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return signInFailed?.call(message);
   }
@@ -1219,6 +1954,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (signInFailed != null) {
@@ -1238,6 +1979,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return signInFailed(this);
   }
@@ -1253,6 +2000,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return signInFailed?.call(this);
   }
@@ -1268,6 +2021,12 @@ class _$SignInFailedImpl implements _SignInFailed {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (signInFailed != null) {
@@ -1359,6 +2118,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return registerSuccess(user);
   }
@@ -1374,6 +2139,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return registerSuccess?.call(user);
   }
@@ -1389,6 +2160,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
@@ -1408,6 +2185,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return registerSuccess(this);
   }
@@ -1423,6 +2206,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return registerSuccess?.call(this);
   }
@@ -1438,6 +2227,12 @@ class _$RegisterSuccessImpl implements _RegisterSuccess {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
@@ -1529,6 +2324,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return registerFailed(message);
   }
@@ -1544,6 +2345,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return registerFailed?.call(message);
   }
@@ -1559,6 +2366,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (registerFailed != null) {
@@ -1578,6 +2391,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return registerFailed(this);
   }
@@ -1593,6 +2412,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return registerFailed?.call(this);
   }
@@ -1608,6 +2433,12 @@ class _$RegisterFailedImpl implements _RegisterFailed {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (registerFailed != null) {
@@ -1698,6 +2529,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return authenticated(user);
   }
@@ -1713,6 +2550,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return authenticated?.call(user);
   }
@@ -1728,6 +2571,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1747,6 +2596,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return authenticated(this);
   }
@@ -1762,6 +2617,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return authenticated?.call(this);
   }
@@ -1777,6 +2638,12 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1841,6 +2708,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return unauthenticated();
   }
@@ -1856,6 +2729,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return unauthenticated?.call();
   }
@@ -1871,6 +2750,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -1890,6 +2775,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return unauthenticated(this);
   }
@@ -1905,6 +2796,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return unauthenticated?.call(this);
   }
@@ -1920,6 +2817,12 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -2005,6 +2908,12 @@ class _$LoginPageImpl implements _LoginPage {
     required TResult Function(AppUser user) authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
   }) {
     return loginPage(user);
   }
@@ -2020,6 +2929,12 @@ class _$LoginPageImpl implements _LoginPage {
     TResult? Function(AppUser user)? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
   }) {
     return loginPage?.call(user);
   }
@@ -2035,6 +2950,12 @@ class _$LoginPageImpl implements _LoginPage {
     TResult Function(AppUser user)? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (loginPage != null) {
@@ -2054,6 +2975,12 @@ class _$LoginPageImpl implements _LoginPage {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
   }) {
     return loginPage(this);
   }
@@ -2069,6 +2996,12 @@ class _$LoginPageImpl implements _LoginPage {
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
   }) {
     return loginPage?.call(this);
   }
@@ -2084,6 +3017,12 @@ class _$LoginPageImpl implements _LoginPage {
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
     required TResult orElse(),
   }) {
     if (loginPage != null) {
@@ -2099,5 +3038,1114 @@ abstract class _LoginPage implements OnboardingState {
   AppUser get user;
   @JsonKey(ignore: true)
   _$$LoginPageImplCopyWith<_$LoginPageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SendingOTPImplCopyWith<$Res> {
+  factory _$$SendingOTPImplCopyWith(
+          _$SendingOTPImpl value, $Res Function(_$SendingOTPImpl) then) =
+      __$$SendingOTPImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SendingOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$SendingOTPImpl>
+    implements _$$SendingOTPImplCopyWith<$Res> {
+  __$$SendingOTPImplCopyWithImpl(
+      _$SendingOTPImpl _value, $Res Function(_$SendingOTPImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SendingOTPImpl implements _SendingOTP {
+  const _$SendingOTPImpl();
+
+  @override
+  String toString() {
+    return 'OnboardingState.sendingOTP()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SendingOTPImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return sendingOTP();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return sendingOTP?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (sendingOTP != null) {
+      return sendingOTP();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return sendingOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return sendingOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (sendingOTP != null) {
+      return sendingOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendingOTP implements OnboardingState {
+  const factory _SendingOTP() = _$SendingOTPImpl;
+}
+
+/// @nodoc
+abstract class _$$OtpSentImplCopyWith<$Res> {
+  factory _$$OtpSentImplCopyWith(
+          _$OtpSentImpl value, $Res Function(_$OtpSentImpl) then) =
+      __$$OtpSentImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OtpSentImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$OtpSentImpl>
+    implements _$$OtpSentImplCopyWith<$Res> {
+  __$$OtpSentImplCopyWithImpl(
+      _$OtpSentImpl _value, $Res Function(_$OtpSentImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OtpSentImpl implements _OtpSent {
+  const _$OtpSentImpl();
+
+  @override
+  String toString() {
+    return 'OnboardingState.otpSent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OtpSentImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return otpSent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return otpSent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (otpSent != null) {
+      return otpSent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return otpSent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return otpSent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (otpSent != null) {
+      return otpSent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OtpSent implements OnboardingState {
+  const factory _OtpSent() = _$OtpSentImpl;
+}
+
+/// @nodoc
+abstract class _$$FailedToSendOTPImplCopyWith<$Res> {
+  factory _$$FailedToSendOTPImplCopyWith(_$FailedToSendOTPImpl value,
+          $Res Function(_$FailedToSendOTPImpl) then) =
+      __$$FailedToSendOTPImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailedToSendOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$FailedToSendOTPImpl>
+    implements _$$FailedToSendOTPImplCopyWith<$Res> {
+  __$$FailedToSendOTPImplCopyWithImpl(
+      _$FailedToSendOTPImpl _value, $Res Function(_$FailedToSendOTPImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailedToSendOTPImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailedToSendOTPImpl implements _FailedToSendOTP {
+  const _$FailedToSendOTPImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'OnboardingState.failedToSendOTP(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToSendOTPImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailedToSendOTPImplCopyWith<_$FailedToSendOTPImpl> get copyWith =>
+      __$$FailedToSendOTPImplCopyWithImpl<_$FailedToSendOTPImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return failedToSendOTP(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return failedToSendOTP?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (failedToSendOTP != null) {
+      return failedToSendOTP(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return failedToSendOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return failedToSendOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (failedToSendOTP != null) {
+      return failedToSendOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailedToSendOTP implements OnboardingState {
+  const factory _FailedToSendOTP(final String message) = _$FailedToSendOTPImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailedToSendOTPImplCopyWith<_$FailedToSendOTPImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyingOTPImplCopyWith<$Res> {
+  factory _$$VerifyingOTPImplCopyWith(
+          _$VerifyingOTPImpl value, $Res Function(_$VerifyingOTPImpl) then) =
+      __$$VerifyingOTPImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyingOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$VerifyingOTPImpl>
+    implements _$$VerifyingOTPImplCopyWith<$Res> {
+  __$$VerifyingOTPImplCopyWithImpl(
+      _$VerifyingOTPImpl _value, $Res Function(_$VerifyingOTPImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyingOTPImpl implements _VerifyingOTP {
+  const _$VerifyingOTPImpl();
+
+  @override
+  String toString() {
+    return 'OnboardingState.verifyingOTP()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyingOTPImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return verifyingOTP();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return verifyingOTP?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (verifyingOTP != null) {
+      return verifyingOTP();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return verifyingOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return verifyingOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (verifyingOTP != null) {
+      return verifyingOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyingOTP implements OnboardingState {
+  const factory _VerifyingOTP() = _$VerifyingOTPImpl;
+}
+
+/// @nodoc
+abstract class _$$OtpVerifiedImplCopyWith<$Res> {
+  factory _$$OtpVerifiedImplCopyWith(
+          _$OtpVerifiedImpl value, $Res Function(_$OtpVerifiedImpl) then) =
+      __$$OtpVerifiedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OtpVerifiedImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$OtpVerifiedImpl>
+    implements _$$OtpVerifiedImplCopyWith<$Res> {
+  __$$OtpVerifiedImplCopyWithImpl(
+      _$OtpVerifiedImpl _value, $Res Function(_$OtpVerifiedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OtpVerifiedImpl implements _OtpVerified {
+  const _$OtpVerifiedImpl();
+
+  @override
+  String toString() {
+    return 'OnboardingState.otpVerified()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OtpVerifiedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return otpVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return otpVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (otpVerified != null) {
+      return otpVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return otpVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return otpVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (otpVerified != null) {
+      return otpVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OtpVerified implements OnboardingState {
+  const factory _OtpVerified() = _$OtpVerifiedImpl;
+}
+
+/// @nodoc
+abstract class _$$FailedToVerifyOTPImplCopyWith<$Res> {
+  factory _$$FailedToVerifyOTPImplCopyWith(_$FailedToVerifyOTPImpl value,
+          $Res Function(_$FailedToVerifyOTPImpl) then) =
+      __$$FailedToVerifyOTPImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$FailedToVerifyOTPImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$FailedToVerifyOTPImpl>
+    implements _$$FailedToVerifyOTPImplCopyWith<$Res> {
+  __$$FailedToVerifyOTPImplCopyWithImpl(_$FailedToVerifyOTPImpl _value,
+      $Res Function(_$FailedToVerifyOTPImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$FailedToVerifyOTPImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailedToVerifyOTPImpl implements _FailedToVerifyOTP {
+  const _$FailedToVerifyOTPImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'OnboardingState.failedToVerifyOTP(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToVerifyOTPImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailedToVerifyOTPImplCopyWith<_$FailedToVerifyOTPImpl> get copyWith =>
+      __$$FailedToVerifyOTPImplCopyWithImpl<_$FailedToVerifyOTPImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) signInFailed,
+    required TResult Function(AppUser user) registerSuccess,
+    required TResult Function(String message) registerFailed,
+    required TResult Function(AppUser user) authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function(AppUser user) loginPage,
+    required TResult Function() sendingOTP,
+    required TResult Function() otpSent,
+    required TResult Function(String message) failedToSendOTP,
+    required TResult Function() verifyingOTP,
+    required TResult Function() otpVerified,
+    required TResult Function(String message) failedToVerifyOTP,
+  }) {
+    return failedToVerifyOTP(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? signInFailed,
+    TResult? Function(AppUser user)? registerSuccess,
+    TResult? Function(String message)? registerFailed,
+    TResult? Function(AppUser user)? authenticated,
+    TResult? Function()? unauthenticated,
+    TResult? Function(AppUser user)? loginPage,
+    TResult? Function()? sendingOTP,
+    TResult? Function()? otpSent,
+    TResult? Function(String message)? failedToSendOTP,
+    TResult? Function()? verifyingOTP,
+    TResult? Function()? otpVerified,
+    TResult? Function(String message)? failedToVerifyOTP,
+  }) {
+    return failedToVerifyOTP?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? signInFailed,
+    TResult Function(AppUser user)? registerSuccess,
+    TResult Function(String message)? registerFailed,
+    TResult Function(AppUser user)? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function(AppUser user)? loginPage,
+    TResult Function()? sendingOTP,
+    TResult Function()? otpSent,
+    TResult Function(String message)? failedToSendOTP,
+    TResult Function()? verifyingOTP,
+    TResult Function()? otpVerified,
+    TResult Function(String message)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (failedToVerifyOTP != null) {
+      return failedToVerifyOTP(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SignInFailed value) signInFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_LoginPage value) loginPage,
+    required TResult Function(_SendingOTP value) sendingOTP,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_FailedToSendOTP value) failedToSendOTP,
+    required TResult Function(_VerifyingOTP value) verifyingOTP,
+    required TResult Function(_OtpVerified value) otpVerified,
+    required TResult Function(_FailedToVerifyOTP value) failedToVerifyOTP,
+  }) {
+    return failedToVerifyOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+    TResult? Function(_LoginPage value)? loginPage,
+    TResult? Function(_SendingOTP value)? sendingOTP,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult? Function(_VerifyingOTP value)? verifyingOTP,
+    TResult? Function(_OtpVerified value)? otpVerified,
+    TResult? Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+  }) {
+    return failedToVerifyOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SignInFailed value)? signInFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_LoginPage value)? loginPage,
+    TResult Function(_SendingOTP value)? sendingOTP,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_FailedToSendOTP value)? failedToSendOTP,
+    TResult Function(_VerifyingOTP value)? verifyingOTP,
+    TResult Function(_OtpVerified value)? otpVerified,
+    TResult Function(_FailedToVerifyOTP value)? failedToVerifyOTP,
+    required TResult orElse(),
+  }) {
+    if (failedToVerifyOTP != null) {
+      return failedToVerifyOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailedToVerifyOTP implements OnboardingState {
+  const factory _FailedToVerifyOTP(final String message) =
+      _$FailedToVerifyOTPImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FailedToVerifyOTPImplCopyWith<_$FailedToVerifyOTPImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

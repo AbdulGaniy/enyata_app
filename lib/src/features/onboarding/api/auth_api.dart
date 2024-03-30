@@ -1,10 +1,13 @@
 
 
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:ui_package/configs/_config.dart';
 
 import '../app/onboarding_facade.dart';
 import '../domain/entities/app_user.dart';
+import '../presentation/bloc/onboarding_bloc.dart';
 
 class AuthApi{
   AuthApi._internal({
@@ -76,6 +79,24 @@ class AuthApi{
     _user = user;
   }
 
+  void setNewUserFromPendingJwt() {
+    if (_user != null) {
+      _currentUser = _user!.copyWith(
+        isVerified: true,
+      );
+      _authState.add(_currentUser);
+
+      _onboardingFacade.updateUserInCache(updatedUser: _currentUser!);
+    }
+  }
+
+  void authenticateUser(BuildContext context) {
+    if (_user != null) {
+      context.read<OnboardingBloc>().add(
+        OnboardingEvent.authenticateWithUserJWT(_user!),
+      );
+    }
+  }
 
 
 }

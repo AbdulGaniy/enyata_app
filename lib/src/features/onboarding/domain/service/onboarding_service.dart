@@ -33,5 +33,14 @@ abstract class OnboardingService{
     required String email,
   });
 
+ TaskEither<Failure, String> sendOtp({
+    required String email,
+  });
+
+ TaskEither<Failure, String> verifyOtp({
+    required String token,
+    required String otp,
+  });
+
 
 }

@@ -11,6 +11,8 @@ List<RouteBase> get $appRoutes => [
       $welcomeRoute,
       $loginRoute,
       $registerRoute,
+      $oTPRoute,
+      $finalRegistrationRoute,
       $homeRoute,
       $homeLandingRoute,
     ];
@@ -91,6 +93,60 @@ extension $RegisterRouteExtension on RegisterRoute {
 
   String get location => GoRouteData.$location(
         '/register',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $oTPRoute => GoRouteData.$route(
+      path: '/otp',
+      factory: $OTPRouteExtension._fromState,
+    );
+
+extension $OTPRouteExtension on OTPRoute {
+  static OTPRoute _fromState(GoRouterState state) => OTPRoute(
+        userId: state.uri.queryParameters['user-id']!,
+        email: state.uri.queryParameters['email']!,
+        token: state.uri.queryParameters['token']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/otp',
+        queryParams: {
+          'user-id': userId,
+          'email': email,
+          'token': token,
+        },
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $finalRegistrationRoute => GoRouteData.$route(
+      path: '/finalregistration',
+      factory: $FinalRegistrationRouteExtension._fromState,
+    );
+
+extension $FinalRegistrationRouteExtension on FinalRegistrationRoute {
+  static FinalRegistrationRoute _fromState(GoRouterState state) =>
+      const FinalRegistrationRoute();
+
+  String get location => GoRouteData.$location(
+        '/finalregistration',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -7,7 +7,8 @@ class AppUserModel extends AppUser{
     required super.lastName,
     required super.isVerified,
     required super.walletBalance,
-    required super.token
+    required super.token,
+    required super.email
 });
 
   factory AppUserModel.fromJson(Map<String, dynamic> json) {
@@ -18,6 +19,7 @@ class AppUserModel extends AppUser{
       isVerified: json['isVerified'] ?? false,
       token: json['token'] ?? '',
       walletBalance: json['balance'] ?? 0,
+      email: json['email'] ?? '',
     );
   }
 
@@ -29,6 +31,7 @@ class AppUserModel extends AppUser{
       'token': token,
       'isVerified': isVerified,
       'balance': walletBalance,
+      'email': email,
     };
   }
 
@@ -40,6 +43,7 @@ class AppUserModel extends AppUser{
       token: user.token,
       isVerified: user.isVerified,
       walletBalance: user.walletBalance,
+      email: user.email,
     );
   }
 }

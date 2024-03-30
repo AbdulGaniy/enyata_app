@@ -24,4 +24,16 @@ class OnboardingEvent with _$OnboardingEvent {
     required String email,
   }) = _CacheCredentials;
 
+  const factory OnboardingEvent.sendOtp({
+    required String email
+}) = _SendOTP;
+
+  const factory OnboardingEvent.verifyOtp({
+    required String token,
+    required String otp,
+  }) = _VerifyOTP;
+
+  const factory OnboardingEvent.authenticateWithUserJWT(AppUser user) =
+  _AuthenticateUser;
+
 }

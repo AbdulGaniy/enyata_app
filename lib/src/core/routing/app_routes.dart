@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:srex/injection.dart';
+import 'package:srex/src/features/onboarding/presentation/screens/otp_screen.dart';
+import 'package:srex/src/features/onboarding/presentation/screens/welcome_page.dart';
 
 
 import '../../features/home/presentation/home_page_landing.dart';

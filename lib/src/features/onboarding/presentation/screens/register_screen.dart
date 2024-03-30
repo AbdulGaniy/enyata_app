@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:srex/src/core/configs/context_extensions.dart';
 import 'package:ui_package/categories/atoms/app_text/app_text.dart';
+import 'package:ui_package/categories/atoms/logo.dart';
 import 'package:ui_package/categories/buttons/app_button.dart';
 import 'package:ui_package/categories/inputs/app_text_field/text_field.dart';
 import 'package:ui_package/categories/layouts/app_inkwell.dart';
@@ -107,8 +108,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const AppLogo(),
+                    const Gap(10),
                     const AppText(
                       params: AppTextParams(
                           text: "Create Account",
@@ -125,6 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           color: context.customColorScheme.textColor
                               .withOpacity(0.7)),
                     ),
+                    const Gap(16),
                     AppTextField(
                       labelText: 'First Name ',
                       hint: "firstname",
@@ -269,7 +273,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
       registerSuccess: (user) {
         "New UserWithJwt: $user".log();
         AuthApi.instance.holdUser(user);
-        const LoginRoute().push(context);
+        OTPRoute(
+          userId: user.id.toString(),
+          email:  user.email,
+          token: user.token
+        ).push(context);
         // VerifyOtpRoute(
         //   userId: userWithJwt.user.id,
         //   email: userWithJwt.user.email,
@@ -319,3 +327,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return difference.inMinutes <= 5;
   }
 }
+
+

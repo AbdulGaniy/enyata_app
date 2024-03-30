@@ -24,6 +24,9 @@ OnboardingBloc({
     on<_SignIn>(_handleSignInWithEmailAndPassword,);
     on<_Register>(_handleRegister);
     on<_CheckLoginState>(_handleCheckLoginState);
+    on<_SendOTP>(_handleSendOTP);
+    on<_VerifyOTP>(_handleVerifyOTP);
+    on<_AuthenticateUser>(_handleAuthenticateUser);
   }
 
   FutureOr<void> _handleSignInWithEmailAndPassword(_SignIn event, Emitter<OnboardingState> emit) async{
@@ -54,7 +57,7 @@ OnboardingBloc({
 
 
   FutureOr<void> _handleRegister(_Register event, Emitter<OnboardingState> emit) async{
-    emit(const _Loading());
+    emit(const OnboardingState.loading());
     final result = await _onboardingFacade.registerUser(
       email: event.email,
       password: event.password,
@@ -71,5 +74,31 @@ OnboardingBloc({
         emit(OnboardingState.registerSuccess(user));
       },
     );
+  }
+
+  FutureOr<void> _handleSendOTP(_SendOTP event, Emitter<OnboardingState> emit) async{
+  emit(const OnboardingState.sendingOTP());
+  final result = await _onboardingFacade.sendOtp(email: event.email);
+  result.fold(
+    (failure) => emit(OnboardingState.failedToSendOTP(failure.message)),
+    (token) => emit(const OnboardingState.otpSent()),
+  );
+  }
+
+  FutureOr<void> _handleVerifyOTP(_VerifyOTP event, Emitter<OnboardingState> emit) async{
+   emit(const OnboardingState.verifyingOTP());
+   final result = await _onboardingFacade.verifyOtp(token: event.token, otp: event.otp);
+    result.fold(
+      (failure) => emit(OnboardingState.failedToVerifyOTP(failure.message)),
+      (token) => emit(const OnboardingState.otpVerified()),
+    );
+  }
+
+  FutureOr<void> _handleAuthenticateUser(_AuthenticateUser event, Emitter<OnboardingState> emit) {
+    if(event.user != null){
+      emit(OnboardingState.authenticated(event.user));
+    }else {
+      emit(const OnboardingState.unauthenticated());
+    }
   }
 }
