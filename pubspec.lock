@@ -2160,7 +2160,7 @@ packages:
   ui_package:
     dependency: "direct main"
     description:
-      path: "../srex_ui"
+      path: "../eyata_ui"
       relative: true
     source: path
     version: "1.0.0+1"

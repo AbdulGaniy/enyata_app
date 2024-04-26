@@ -1,4 +1,4 @@
-name: srex
+name: enyata
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -101,7 +101,7 @@ dependencies:
   rename: ^3.0.1
 # ui_package:
   ui_package:
-    path: ../srex_ui
+    path: ../eyata_ui
 
 
   # network

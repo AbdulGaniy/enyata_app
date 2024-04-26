@@ -9,12 +9,8 @@ part of 'app_routes.dart';
 List<RouteBase> get $appRoutes => [
       $startUpRoute,
       $welcomeRoute,
-      $loginRoute,
-      $registerRoute,
-      $oTPRoute,
-      $finalRegistrationRoute,
-      $homeRoute,
-      $homeLandingRoute,
+      $messagesRoute,
+      $chatsRoute,
     ];
 
 RouteBase get $startUpRoute => GoRouteData.$route(
@@ -61,16 +57,16 @@ extension $WelcomeRouteExtension on WelcomeRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $loginRoute => GoRouteData.$route(
-      path: '/login',
-      factory: $LoginRouteExtension._fromState,
+RouteBase get $messagesRoute => GoRouteData.$route(
+      path: '/messages',
+      factory: $MessagesRouteExtension._fromState,
     );
 
-extension $LoginRouteExtension on LoginRoute {
-  static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
+extension $MessagesRouteExtension on MessagesRoute {
+  static MessagesRoute _fromState(GoRouterState state) => const MessagesRoute();
 
   String get location => GoRouteData.$location(
-        '/login',
+        '/messages',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -83,115 +79,18 @@ extension $LoginRouteExtension on LoginRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $registerRoute => GoRouteData.$route(
-      path: '/register',
-      factory: $RegisterRouteExtension._fromState,
+RouteBase get $chatsRoute => GoRouteData.$route(
+      path: '/chat/:chatId',
+      factory: $ChatsRouteExtension._fromState,
     );
 
-extension $RegisterRouteExtension on RegisterRoute {
-  static RegisterRoute _fromState(GoRouterState state) => const RegisterRoute();
-
-  String get location => GoRouteData.$location(
-        '/register',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $oTPRoute => GoRouteData.$route(
-      path: '/otp',
-      factory: $OTPRouteExtension._fromState,
-    );
-
-extension $OTPRouteExtension on OTPRoute {
-  static OTPRoute _fromState(GoRouterState state) => OTPRoute(
-        userId: state.uri.queryParameters['user-id']!,
-        email: state.uri.queryParameters['email']!,
-        token: state.uri.queryParameters['token']!,
+extension $ChatsRouteExtension on ChatsRoute {
+  static ChatsRoute _fromState(GoRouterState state) => ChatsRoute(
+        chatId: int.parse(state.pathParameters['chatId']!),
       );
 
   String get location => GoRouteData.$location(
-        '/otp',
-        queryParams: {
-          'user-id': userId,
-          'email': email,
-          'token': token,
-        },
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $finalRegistrationRoute => GoRouteData.$route(
-      path: '/finalregistration',
-      factory: $FinalRegistrationRouteExtension._fromState,
-    );
-
-extension $FinalRegistrationRouteExtension on FinalRegistrationRoute {
-  static FinalRegistrationRoute _fromState(GoRouterState state) =>
-      const FinalRegistrationRoute();
-
-  String get location => GoRouteData.$location(
-        '/finalregistration',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/home',
-      factory: $HomeRouteExtension._fromState,
-    );
-
-extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
-
-  String get location => GoRouteData.$location(
-        '/home',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $homeLandingRoute => GoRouteData.$route(
-      path: '/home_landing',
-      factory: $HomeLandingRouteExtension._fromState,
-    );
-
-extension $HomeLandingRouteExtension on HomeLandingRoute {
-  static HomeLandingRoute _fromState(GoRouterState state) =>
-      const HomeLandingRoute();
-
-  String get location => GoRouteData.$location(
-        '/home_landing',
+        '/chat/${Uri.encodeComponent(chatId.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);

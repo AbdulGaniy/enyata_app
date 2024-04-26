@@ -1,13 +1,7 @@
 class ApiMsEndpoints {
   final String baseUrl;
 
-  String get signInWithEmailAndPassword => '$baseUrl/login';
-
-  String get registerUser => '$baseUrl/signup';
-
-  String get sendOtp => '$baseUrl/sendotp';
-
-  String get verifyOtp => '$baseUrl/confirmotp';
+  String get loadChats => '$baseUrl/v1/chat_room';
 
   // make this a singleton class
   factory ApiMsEndpoints.init({required String baseUrl}) {

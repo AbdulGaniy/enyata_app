@@ -412,11 +412,11 @@ class _OverlayWrapperState extends State<OverlayWrapper> {
           ),
           child: Row(
             children: [
-              AppImage(
-                path: overlayCtx.images.congratulations.path,
-                height: 24.0,
-                width: 24.0,
-              ),
+              // AppImage(
+              //   path: overlayCtx.images.congratulations.path,
+              //   height: 24.0,
+              //   width: 24.0,
+              // ),
               const Gap(10.0),
               Expanded(
                 child: Column(

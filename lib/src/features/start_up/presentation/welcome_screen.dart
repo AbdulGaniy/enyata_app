@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:srex/src/core/routing/app_routes.dart';
-import 'package:srex/src/features/start_up/presentation/content_model.dart';
 import 'package:ui_package/categories/atoms/app_image.dart';
 import 'package:ui_package/categories/atoms/app_text/app_text.dart';
 import 'package:ui_package/categories/atoms/svg_icon.dart';
@@ -11,7 +9,9 @@ import 'package:ui_package/categories/layouts/gap.dart';
 import 'package:ui_package/configs/_config.dart';
 import 'package:ui_package/gen/assets.gen.dart';
 
+import '../../../core/routing/app_routes.dart';
 import 'animated_bar.dart';
+import 'content_model.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -178,22 +178,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         const Gap(32),
                         AppButton(
                           params: AppButtonParams(
-                            text: 'Register',
+                            text: 'Start',
                             isFullWidth: true,
                             backgroundColor: context.customColorScheme.primary,
                             onPressed: () {
-                              const RegisterRoute().push(context);
-                            },
-                          ),
-                        ),
-                        const Gap(20),
-                        AppButton(
-                          params: AppButtonParams(
-                            text: 'Sign in',
-                            isOutline: true,
-                            isFullWidth: true,
-                            onPressed: () {
-                              const LoginRoute().push(context);
+                              const MessagesRoute().push(context);
                             },
                           ),
                         ),
@@ -232,15 +221,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               .toList(),
         ),
         const Gap(15),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            AppSvgIcon(
-              context.icons.srexLogo,
-              height: 25,
-            ),
-          ],
-        ),
       ],
     );
   }

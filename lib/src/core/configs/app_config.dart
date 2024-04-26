@@ -8,7 +8,7 @@ class AppConfig {
 
   factory AppConfig.dev() {
     return AppConfig(
-      apiMsEndpoint: "http://161.97.66.249/NecoHrm/api/Mobile",
+      apiMsEndpoint: "https://flutter-assessment-backend-rioz.onrender.com/api",
     );
   }
 

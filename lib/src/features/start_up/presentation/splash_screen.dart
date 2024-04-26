@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:srex/src/core/routing/app_routes.dart';
+
 import 'package:ui_package/categories/atoms/_atoms.dart';
 import 'package:ui_package/configs/_config.dart';
 import '../../../../injection.dart';
-import '../../onboarding/presentation/bloc/onboarding_bloc.dart';
+import '../../../core/routing/app_routes.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -33,19 +34,10 @@ class _SplashScreenState extends State<SplashScreen> {
             alignment: Alignment.bottomCenter,
             children: [
               Center(
-                child: AppSvgIcon(
-                  context.icons.srexWhite,
-                  height: 50,
+                child: AppLottie(
+                  context.lottie.hello,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10),
-                child: AppSvgIcon(
-                  context.icons.cityRoad,
-                  width: context.screenWidth,
-                  height: 500,
-                ),
-              )
             ],
           ),
         ));
@@ -55,9 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       const Duration(seconds: 4),
       () {
-        context.read<OnboardingBloc>().add(
-              const OnboardingEvent.checkLoginState(),
-            );
+        context.go(const WelcomeRoute().location);
       },
     );
   }
